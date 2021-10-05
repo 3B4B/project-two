@@ -3,9 +3,9 @@ This is for maintaining communication about your team's working meetings to "shi
 
 ## Tuesday, October 5 In-Class:
 - What are the characteristics of the card?
-    - Large headings
+    - Header and sub-header
     - Visual Icon
-    - Bulleted list
+    - Content area
     - Colorized banner, white card background, black text
 - What design considerations must we take into account?
     - Scaling with heading and list
@@ -13,32 +13,40 @@ This is for maintaining communication about your team's working meetings to "shi
     - Having changeable icons
     - Styling based upon content alterations
     - Size and style of cards need to be consistent
+    - Page responsiveness
+    - Margins and negative space
 - What accessibility concerns do we potentially have?
     - Accessing the text within the card via screen reader
     - Readability based on text size (too small/large)
+    - Contrast
+    - Heading order
+    - Translatability
 - What security concerns do we potentially have?
-    - Given what we know right now, no major security concerns exist
+    - Content modification
+    - SVG vulnerabilities
 - What "states" does this card have?
     - Visible
     - Disabled
     - Potentially a click state?
     - Potentially focus and hover states
+    - Card type
 - What do we call it?
     - Simple, embedded bulletin
     - Quick facts
 - What areas do we need to account for flexible content / HTML entry of any kind?
     - Header
     - Icon
-    - Bulleted List
+    - Content formatting
     - Banner color
     - Header font
     - List element font
 - Do we have room for additional reusable atoms to be produced? (there are 4 total by my count)
     Yes
 - What should we call each of them?
-    - The top, colorized banner
-    - Bulleted list pane
-    - Icon
+    - The top, colorized banner (3b4b-banner)
+    - Icon (3b4b-icon)
+    - Skeletal card (3b4b-card)
+    - Entire card (3b4b-science-card)
 
 ## Meeting notes
 These are notes to be maintained PER date that you meet. What you did and what the next steps are
