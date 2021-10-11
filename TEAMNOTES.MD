@@ -2,18 +2,7 @@
 This is for maintaining communication about your team's working meetings to "ship" the project.
 
 ## Thursday, October 7 In-Class:
-**Four Elements**
-- *Entire card:* 
-  - Possible name: 3b4b-edu-card
-  - Properties: 
-- *Scaffold of card:* 
-  - Possible name: 3b4b-edu-card-scaffold
-- *Banner:* 
-  - Possible name: 3b4b-edu-banner
-  - Properties: color; font; orientation; margin/padding
-- *Icon:* 
-  - Possible name: 3b4b-edu-icon
-  - Properties: padding; color; size;
+Refer to check-in #1
 
 ## Tuesday, October 5 In-Class:
 - What are the characteristics of the card?
@@ -93,6 +82,11 @@ These are dedicated status check-ins as this is a multi-week project
   - Possible name: 3b4b-edu-icon
   - Properties: padding; color; size;
   - Design Considerations: Changeability, sizing ratio
+  
+Next Steps
+  - Looking into best way to split up work **EVENLY**
+  - Looking into named slot values.
+  
 
 ### Check-in 2
 - 
