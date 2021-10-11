@@ -53,12 +53,15 @@ Refer to check-in #1
 
 ## Meeting notes
 These are notes to be maintained PER date that you meet. What you did and what the next steps are
-### Meeting Date
+### Meeting Date: 
+- October 10
 
-#### What we did:
+#### What we did: 
+- Discussed Properties and Design Considerations for four elements.
 
 
 #### What we'll do next
+- Meet some time during the week to re-evaluate roles and set up a timeline.
 
 
 ## Status check ins
