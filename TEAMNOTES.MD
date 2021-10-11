@@ -75,8 +75,25 @@ These are notes to be maintained PER date that you meet. What you did and what t
 ## Status check ins
 These are dedicated status check-ins as this is a multi-week project
 ### Check-in 1
-- 
-- 
+
+**Four Elements**
+- *Entire card:* 
+  - Possible name: 3b4b-edu-card
+  - Properties: Border Thickness, Border Color, Margin
+  - Design Considerations: Color Contrast between Header and content, page responsiveness, "lazy loading"
+- *Scaffold of card:* 
+  - Possible name: 3b4b-edu-card-scaffold
+  - Properties: Banner, Content
+  - Design Considerations: Styling based on Length of header text, Scaling with heading and content(<p>)
+- *Banner:* 
+  - Possible name: 3b4b-edu-banner
+  - Properties: color; font; orientation; margin/padding; icon
+  - Design Considerations: Styling based on Length of header text, color based on type of card
+- *Icon:* 
+  - Possible name: 3b4b-edu-icon
+  - Properties: padding; color; size;
+  - Design Considerations: Changeability, sizing ratio
+
 ### Check-in 2
 - 
 - 
