@@ -76,7 +76,7 @@ These are dedicated status check-ins as this is a multi-week project
 - *Scaffold of card:* 
   - Possible name: 3b4b-edu-card-scaffold
   - Properties: Banner, Content
-  - Design Considerations: Styling based on Length of header text, Scaling with heading and content(<p>)
+  - Design Considerations: Styling based on Length of header text, Scaling with heading and content
 - *Banner:* 
   - Possible name: 3b4b-edu-banner
   - Properties: color; font; orientation; margin/padding; icon
