@@ -6,6 +6,7 @@ import { LitElement, html, css } from 'lit';
 // on github pages, or when people reuse assets outside your elements in production
 // because this won't change we can leverage as an internal variable without being
 // declared in properties. This let's us ship the icons while referencing them correctly
+const question = new URL('../assets/question.svg', import.meta.url).href;
 // EXPORT (so make available to other documents that reference this file) a class, that extends LitElement
 // which has the magic life-cycles and developer experience below added
 export class LearningCardCopy extends LitElement {
@@ -84,6 +85,8 @@ export class LearningCardCopy extends LitElement {
       }
       #banner {
         background-color: green;
+        display: flex;
+        flex-direction: row;
       }
       #content {
         background-color: yellow;
@@ -97,7 +100,9 @@ export class LearningCardCopy extends LitElement {
       <div id="entire-card">
         <div id="scaffold-card">
           <div id="banner">
-            <div id="icon"></div>
+            <span id="iconSpan">
+              <img part="icon" src="${question}" alt="" />
+            </span>
             <div id="headers">
               <p id="main-header">I am main header</p>
               <p id="sub-header">I am sub header</p>
