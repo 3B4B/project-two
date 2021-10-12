@@ -1,6 +1,9 @@
 # Team notes
 This is for maintaining communication about your team's working meetings to "ship" the project.
 
+## Thursday, October 7 In-Class:
+Refer to check-in #1
+
 ## Tuesday, October 5 In-Class:
 - What are the characteristics of the card?
     - Header and sub-header
@@ -50,19 +53,44 @@ This is for maintaining communication about your team's working meetings to "shi
 
 ## Meeting notes
 These are notes to be maintained PER date that you meet. What you did and what the next steps are
-### Meeting Date
+### Meeting Date: 
+- October 10
 
-#### What we did:
+#### What we did: 
+- Discussed Properties and Design Considerations for four elements.
 
 
 #### What we'll do next
+- Meet some time during the week to re-evaluate roles and set up a timeline.
 
 
 ## Status check ins
 These are dedicated status check-ins as this is a multi-week project
 ### Check-in 1
-- 
-- 
+
+**Four Elements**
+- *Entire card:* 
+  - Possible name: 3b4b-edu-card
+  - Properties: Border Thickness, Border Color, Margin
+  - Design Considerations: Color Contrast between Header and content, page responsiveness, "lazy loading"
+- *Scaffold of card:* 
+  - Possible name: 3b4b-edu-card-scaffold
+  - Properties: Banner, Content
+  - Design Considerations: Styling based on Length of header text, Scaling with heading and content
+- *Banner:* 
+  - Possible name: 3b4b-edu-banner
+  - Properties: color; font; orientation; margin/padding; icon
+  - Design Considerations: Styling based on Length of header text, color based on type of card
+- *Icon:* 
+  - Possible name: 3b4b-edu-icon
+  - Properties: padding; color; size;
+  - Design Considerations: Changeability, sizing ratio
+  
+Next Steps
+  - Looking into best way to split up work **EVENLY**
+  - Looking into named slot values.
+  
+
 ### Check-in 2
 - 
 - 
