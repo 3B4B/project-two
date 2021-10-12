@@ -91,6 +91,10 @@ export class LearningCardCopy extends LitElement {
       #content {
         background-color: yellow;
       }
+      #scaffold-card {
+        display: flex;
+        flex-direction: column;
+      }
     `;
   }
 
