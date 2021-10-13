@@ -6,7 +6,11 @@ import { LitElement, html, css } from 'lit';
 // on github pages, or when people reuse assets outside your elements in production
 // because this won't change we can leverage as an internal variable without being
 // declared in properties. This let's us ship the icons while referencing them correctly
+
+// const beaker = new URL('../assets/beaker.svg', import.meta.url).href;
+// const lightbulb = new URL('../assets/lightbulb.svg', import.meta.url).href;
 const question = new URL('../assets/question.svg', import.meta.url).href;
+
 // EXPORT (so make available to other documents that reference this file) a class, that extends LitElement
 // which has the magic life-cycles and developer experience below added
 export class LearningCardCopy extends LitElement {
@@ -66,34 +70,65 @@ export class LearningCardCopy extends LitElement {
   // CSS - specific to Lit
   static get styles() {
     return css`
+      @font-face {
+        font-family: 'Open Sans';
+        src: url('../assets/fonts/OpenSans-Light.ttf');
+      }
       :host {
         display: block;
+        --learning-card-banner-color: green;
+        font-family: 'Open Sans', sans-serif;
       }
       /* this is how you match something on the tag itself like <learning-card type="math"> and then style the img inside */
       :host([type='math']) img {
-        background-color: purple;
+        background-color: transparent;
       }
+
       img {
         display: inline-flex;
         height: var(--learning-card-height, 100px);
         width: var(--learning-card-width, 100px);
-        background-color: green;
+        background-color: transparent;
       }
+
+      #iconSpan {
+        vertical-align: middle;
+      }
+
       #entire-card {
         border-width: 1px;
         background-color: red;
       }
       #banner {
-        background-color: green;
+        background-color: var(--learning-card-banner-color);
         display: flex;
         flex-direction: row;
+        font: arial;
+        color: white;
+      }
+
+      #headers {
+        padding: 0px;
+        margin: 0px;
+      }
+
+      #main-header {
+        font-weight: 300;
+        font-size: 45px;
+      }
+      #sub-header {
+        font-weight: 500;
+        font-size: 50px;
       }
       #content {
-        background-color: yellow;
+        background-color: white;
+        border: 1px solid black;
+        border-top: transparent;
       }
       #scaffold-card {
         display: flex;
         flex-direction: column;
+        border-color: black;
       }
     `;
   }
@@ -108,15 +143,15 @@ export class LearningCardCopy extends LitElement {
               <img part="icon" src="${question}" alt="" />
             </span>
             <div id="headers">
-              <p id="main-header">I am main header</p>
-              <p id="sub-header">I am sub header</p>
+              <h2 id="main-header">I AM MAIN HEADER</h2>
+              <h3 id="sub-header">I AM SUB HEADER</h3>
             </div>
           </div>
           <div id="content">
             <ul>
-              <li>Chem Sucks</li>
-              <li>Physics Sucks</li>
-              <li>Stat Sucks</li>
+              <li>Chem</li>
+              <li>Physics</li>
+              <li>Stat</li>
             </ul>
           </div>
         </div>
