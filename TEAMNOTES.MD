@@ -1,6 +1,20 @@
 # Team notes
 This is for maintaining communication about your team's working meetings to "ship" the project.
 
+## Thursday, October 14 In-Class:
+What did you take away from the portion of class about implementing SimpleColors?
+  - Having something like SimpleColors that can be added and used uniformly allows for better consistency
+ 
+What did you learn from other groups?
+	- States and keyboard navigation should be considered for the entire card but implemented wihtin the individual component classes.
+  - Some groups are using different card designs as their templates.
+
+What are your next steps?
+  - Get the CSS fixed up for the whole card
+  - Start breaking card into components, start with icon then banner
+  - Set icon up to be determined based on type attribute
+  - Adding in Slots
+
 ## Thursday, October 7 In-Class:
 Refer to check-in #1
 
