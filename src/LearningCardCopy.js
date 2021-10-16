@@ -1,5 +1,6 @@
 // dependencies / things imported
 import { LitElement, html, css } from 'lit';
+import './Learning-Header.js';
 
 // this is the base path to the assets calculated at run time
 // this ensures that assets are shipped correctly when building the demo
@@ -83,13 +84,17 @@ export class LearningCardCopy extends LitElement {
 
       img {
         display: inline-flex;
-        height: var(--learning-card-height, 100px);
-        width: var(--learning-card-width, 100px);
+        height: var(--learning-card-height, 150px);
+        width: var(--learning-card-width, 150px);
         background-color: transparent;
       }
 
-      #iconSpan {
-        vertical-align: middle;
+      #iconDiv {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid orange;
       }
 
       #entire-card {
@@ -109,15 +114,23 @@ export class LearningCardCopy extends LitElement {
       #headers {
         padding: 0px;
         margin: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
       }
 
       #main-header {
-        font-weight: 300;
-        font-size: 45px;
+        font-weight: bold;
+        font-size: 50px;
+        border: 1px solid red;
+        margin: 0;
       }
       #sub-header {
         font-weight: 400;
         font-size: 50px;
+        border: 1px solid yellow;
+        margin: 0;
       }
       #content {
         background-color: white;
@@ -139,9 +152,9 @@ export class LearningCardCopy extends LitElement {
         <div id="scaffold-card">
           <learning-banner>hello</learning-banner>
           <div id="banner">
-            <span id="iconSpan">
+            <div id="iconDiv">
               <img part="icon" src="${question}" alt="" />
-            </span>
+            </div>
             <div id="headers">
               <h2 id="main-header">I AM MAIN HEADER</h2>
               <h3 id="sub-header">I AM SUB HEADER</h3>
