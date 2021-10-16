@@ -70,10 +70,7 @@ export class LearningCardCopy extends LitElement {
   // CSS - specific to Lit
   static get styles() {
     return css`
-      @font-face {
-        font-family: 'Open Sans';
-        src: url('../assets/fonts/OpenSans-Light.ttf');
-      }
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
       :host {
         display: block;
         --learning-card-banner-color: green;
@@ -98,13 +95,15 @@ export class LearningCardCopy extends LitElement {
       #entire-card {
         border-width: 1px;
         background-color: red;
+        font-family: 'Open Sans', sans-serif;
       }
       #banner {
         background-color: var(--learning-card-banner-color);
         display: flex;
         flex-direction: row;
-        font: arial;
+        border: 1px solid var(--learning-card-banner-color);
         color: white;
+        font-family: 'Open Sans', sans-serif;
       }
 
       #headers {
@@ -117,7 +116,7 @@ export class LearningCardCopy extends LitElement {
         font-size: 45px;
       }
       #sub-header {
-        font-weight: 500;
+        font-weight: 400;
         font-size: 50px;
       }
       #content {
@@ -138,6 +137,7 @@ export class LearningCardCopy extends LitElement {
     return html`
       <div id="entire-card">
         <div id="scaffold-card">
+          <learning-banner>hello</learning-banner>
           <div id="banner">
             <span id="iconSpan">
               <img part="icon" src="${question}" alt="" />
@@ -149,6 +149,15 @@ export class LearningCardCopy extends LitElement {
           </div>
           <div id="content">
             <ul>
+              <li>Chem</li>
+              <li>Physics</li>
+              <li>Stat</li>
+              <li>Chem</li>
+              <li>Physics</li>
+              <li>Stat</li>
+              <li>Chem</li>
+              <li>Physics</li>
+              <li>Stat</li>
               <li>Chem</li>
               <li>Physics</li>
               <li>Stat</li>
