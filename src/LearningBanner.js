@@ -1,15 +1,15 @@
-import { LitElement, html, css } from 'lit';
-import '@lrnwebcomponents/simple-colors/simple-colors.js';
+import { html, css } from 'lit';
+import { SimpleColors } from '@lrnwebcomponents/simple-colors/simple-colors';
 
-export class LearningBanner extends LitElement {
-  static get tag() {
-    return 'learning-banner';
-  }
-
+export class LearningBanner extends SimpleColors {
   constructor() {
     super();
     this.accentColor = 'blue';
     this.dark = false;
+  }
+
+  static get tag() {
+    return 'learning-banner';
   }
 
   static get properties() {
@@ -32,6 +32,11 @@ export class LearningBanner extends LitElement {
   }
 
   render() {
-    return html` <div><p>HELLO</p></div> `;
+    return html`
+      <div>
+        <p>Hello<span></span></p>
+      </div>
+    `;
   }
 }
+customElements.define(LearningBanner.tag, LearningBanner);
