@@ -106,8 +106,9 @@ Next Steps
   
 
 ### Check-in 2
-- 
-- 
+- [x] Basic API to render the icon based on having the correct name leveraged
+- [ ] Header / banner element should have a basic API supporting two named slots and implementing your icon
+- [ ] Definition should be dynamically imported in the constructor or firstUpdated life-cycle of the header / banner element (reading and examples before should help inform this)
 ### Check-in 3
 - 
 - 
