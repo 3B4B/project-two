@@ -1,7 +1,9 @@
+/* eslint-disable no-unused-vars */
 // dependencies / things imported
 import { LitElement, html, css } from 'lit';
 import './Learning-Header.js';
 import './LearningBanner.js';
+import './LearningIcon.js';
 
 // this is the base path to the assets calculated at run time
 // this ensures that assets are shipped correctly when building the demo
@@ -9,8 +11,8 @@ import './LearningBanner.js';
 // because this won't change we can leverage as an internal variable without being
 // declared in properties. This let's us ship the icons while referencing them correctly
 
-// const beaker = new URL('../assets/beaker.svg', import.meta.url).href;
-// const lightbulb = new URL('../assets/lightbulb.svg', import.meta.url).href;
+const beaker = new URL('../assets/beaker.svg', import.meta.url).href;
+const lightbulb = new URL('../assets/lightbulb.svg', import.meta.url).href;
 const question = new URL('../assets/question.svg', import.meta.url).href;
 
 // EXPORT (so make available to other documents that reference this file) a class, that extends LitElement
@@ -122,21 +124,24 @@ export class LearningCardCopy extends LitElement {
       }
 
       #main-header {
-        font-weight: bold;
+        font-weight: 300;
         font-size: 50px;
         border: 1px solid red;
         margin: 0;
+        padding-left: 30px;
       }
       #sub-header {
-        font-weight: 400;
+        font-weight: 500;
         font-size: 50px;
         border: 1px solid yellow;
         margin: 0;
+        padding-left: 10px;
       }
       #content {
         background-color: white;
         border: 1px solid black;
         border-top: transparent;
+        padding-left: 190px;
       }
       #scaffold-card {
         display: flex;
@@ -149,40 +154,27 @@ export class LearningCardCopy extends LitElement {
   // HTML - specific to Lit
   render() {
     return html`
-      <p>AHHHHHHHHHHHH</p>
-      <learning-icon></learning-icon>
-      <learning-header></learning-header>
-      <br />
-      <br />
-
       <div id="entire-card">
         <div id="scaffold-card">
           <learning-banner></learning-banner>
           <learning-header></learning-header>
           <div id="banner">
-            <span id="iconDiv">
-              <img part="icon" src="${question}" alt="" />
-            </span>
+            <learning-icon image=${lightbulb}></learning-icon>
             <div id="headers">
               <h2 id="main-header">I AM MAIN HEADER</h2>
               <h3 id="sub-header">I AM SUB HEADER</h3>
             </div>
           </div>
           <div id="content">
+            <p>Paragraph starts</p>
             <ul>
-              <li>Chem</li>
-              <li>Physics</li>
-              <li>Stat</li>
-              <li>Chem</li>
-              <li>Physics</li>
-              <li>Stat</li>
-              <li>Chem</li>
-              <li>Physics</li>
-              <li>Stat</li>
-              <li>Chem</li>
+              <li>List Starts</li>
               <li>Physics</li>
               <li>Stat</li>
             </ul>
+            <ol>
+              <li>Numbered List starts</li>
+            </ol>
           </div>
         </div>
       </div>

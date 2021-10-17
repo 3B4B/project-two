@@ -34,7 +34,7 @@ export class LearningBanner extends SimpleColors {
   render() {
     return html`
       <div>
-        <p>Hello<span></span></p>
+        <p>This is learning banner<span></span></p>
       </div>
     `;
   }

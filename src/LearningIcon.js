@@ -1,20 +1,18 @@
 /* eslint-disable no-unused-vars */
-import { LitElement, html, css } from 'lit';
-import '@lrnwebcomponents/simple-colors/simple-colors.js';
+import { html, css } from 'lit';
+import { SimpleColors } from '@lrnwebcomponents/simple-colors/simple-colors';
 
-const beaker = new URL('../assets/beaker.svg', import.meta.url).href;
-const lightbulb = new URL('../assets/lightbulb.svg', import.meta.url).href;
 const question = new URL('../assets/question.svg', import.meta.url).href;
 
-export class LearningIcon extends LitElement {
-  static get tag() {
-    return 'learning-icon';
-  }
-
+export class LearningIcon extends SimpleColors {
   constructor() {
     super();
-    this.image = 'https://www.w3schools.com/images/lamp.jpg';
+    this.image = question;
     this.dark = false;
+  }
+
+  static get tag() {
+    return 'learning-icon';
   }
 
   static get properties() {
@@ -29,31 +27,30 @@ export class LearningIcon extends LitElement {
       ...super.styles,
       css`
         :host {
-          display: block;
+          display: inline-flex;
+          flex-direction: row;
           height: var(--learning-card-height, 150px);
           width: var(--learning-card-width, 150px);
-          background-color: orange;
-          border: 1px solid black;
+          border: 1px dotted cyan;
+          background-color: blue;
         }
-        /*
-        img {
-            display: inline-flex;
-            height: var(--learning-card-height, 150px);
-            width: var(--learning-card-width, 150px);
-        } */
+        span {
+          display: inline-flex;
+          height: var(--learning-card-height, 150px);
+          width: var(--learning-card-width, 150px);
+          justify-content: center;
+          align-items: center;
+        }
       `,
     ];
   }
 
   render() {
-    // return html` <div><img src="https://www.w3schools.com/images/lamp.jpg" alt="lamp" height="150px" width="150px"/></div> `;
-    // return html`
-    //   <div>
-    //     <p>cheese</p>
-    //   </div>
-
-    //   `
-    // ;
-    return html` <div><p>words</p></div> `;
+    return html`
+      <div>
+        <span><img src="${this.image}" alt="Icon" /></span>
+      </div>
+    `;
   }
 }
+customElements.define(LearningIcon.tag, LearningIcon);
