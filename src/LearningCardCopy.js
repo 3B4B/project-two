@@ -1,6 +1,7 @@
 // dependencies / things imported
 import { LitElement, html, css } from 'lit';
 import './Learning-Header.js';
+import './LearningBanner.js';
 
 // this is the base path to the assets calculated at run time
 // this ensures that assets are shipped correctly when building the demo
@@ -150,7 +151,8 @@ export class LearningCardCopy extends LitElement {
     return html`
       <div id="entire-card">
         <div id="scaffold-card">
-          <learning-banner>hello</learning-banner>
+          <learning-banner></learning-banner>
+          <learning-header></learning-header>
           <div id="banner">
             <div id="iconDiv">
               <img part="icon" src="${question}" alt="" />
