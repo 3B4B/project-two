@@ -12,19 +12,26 @@ export class LearningBanner extends LitElement {
     this.dark = false;
   }
 
+  static get properties() {
+    return {
+      ...super.properties,
+    };
+  }
+
   static get styles() {
     return [
       ...super.styles,
       css`
         :host {
           display: block;
-          background-color: black;
+          background-color: var(--simple-colors-default-theme-accent-8);
+          color: var(--simple-colors-default-theme-grey-1);
         }
       `,
     ];
   }
 
   render() {
-    return html` <div><p>Hello</p></div> `;
+    return html` <div><p>HELLO</p></div> `;
   }
 }

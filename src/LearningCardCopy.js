@@ -1,6 +1,5 @@
 // dependencies / things imported
 import { LitElement, html, css } from 'lit';
-import './Learning-Header.js';
 
 // this is the base path to the assets calculated at run time
 // this ensures that assets are shipped correctly when building the demo
@@ -78,15 +77,15 @@ export class LearningCardCopy extends LitElement {
         font-family: 'Open Sans', sans-serif;
       }
       /* this is how you match something on the tag itself like <learning-card type="math"> and then style the img inside */
-      :host([type='math']) img {
+      /* :host([type='math']) img {
         background-color: transparent;
-      }
+      } */
 
       img {
         display: inline-flex;
         height: var(--learning-card-height, 150px);
         width: var(--learning-card-width, 150px);
-        background-color: transparent;
+        background-color: blue;
       }
 
       #iconDiv {
@@ -148,13 +147,19 @@ export class LearningCardCopy extends LitElement {
   // HTML - specific to Lit
   render() {
     return html`
+      <p>AHHHHHHHHHHHH</p>
+      <learning-icon></learning-icon>
+      <learning-header></learning-header>
+      <br />
+      <br />
+
       <div id="entire-card">
         <div id="scaffold-card">
-          <learning-banner>hello</learning-banner>
+          <learning-banner></learning-banner>
           <div id="banner">
-            <div id="iconDiv">
+            <span id="iconDiv">
               <img part="icon" src="${question}" alt="" />
-            </div>
+            </span>
             <div id="headers">
               <h2 id="main-header">I AM MAIN HEADER</h2>
               <h3 id="sub-header">I AM SUB HEADER</h3>
