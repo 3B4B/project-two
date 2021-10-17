@@ -24,7 +24,8 @@ export class LearningBanner extends SimpleColors {
       css`
         :host {
           display: block;
-          background-color: green;
+          background-color: var(--simple-colors-default-theme-accent-8);
+          color: var(--simple-colors-default-theme-grey-1);
         }
       `,
     ];
@@ -33,7 +34,7 @@ export class LearningBanner extends SimpleColors {
   render() {
     return html`
       <div>
-        <p>Hello<span></span></p>
+        <p>This is learning banner<span></span></p>
       </div>
     `;
   }
