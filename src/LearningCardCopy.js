@@ -110,6 +110,19 @@ export class LearningCardCopy extends LitElement {
         flex-direction: column;
         border-color: black;
       }
+      #main-header {
+          font-weight: 300;
+          font-size: 50px;
+          border: 1px solid red;
+          margin: 0;
+          padding-left: 30px;
+        }
+        #sub-header {
+          font-weight: 500;
+          font-size: 50px;
+          border: 1px solid yellow;
+          margin: 0;
+          padding-left: 10px;
     `;
   }
 
@@ -119,8 +132,8 @@ export class LearningCardCopy extends LitElement {
       <div id="entire-card">
         <div id="scaffold-card">
           <learning-banner image=${lightbulb}>
-            <p slot="mainHeader">I AM MAIN HEADER</p>
-            <p slot="subHeader">I AM SUB HEADER</p>
+            <p id="main-header" slot="mainHeader">I AM MAIN HEADER</p>
+            <p id="sub-header" slot="subHeader">I AM SUB HEADER</p>
           </learning-banner>
           <div id="content">
             <p>Paragraph starts</p>

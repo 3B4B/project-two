@@ -40,23 +40,10 @@ export class LearningBanner extends SimpleColors {
           padding: 0px;
           margin: 0px;
           display: flex;
+          border: 2px solid red;
           flex-direction: column;
           justify-content: center;
           align-items: center;
-        }
-        #main-header {
-          font-weight: 300;
-          font-size: 50px;
-          border: 1px solid red;
-          margin: 0;
-          padding-left: 30px;
-        }
-        #sub-header {
-          font-weight: 500;
-          font-size: 50px;
-          border: 1px solid yellow;
-          margin: 0;
-          padding-left: 10px;
         }
       `,
     ];
@@ -67,8 +54,8 @@ export class LearningBanner extends SimpleColors {
       <div id="banner">
         <learning-icon image=${this.image}></learning-icon>
         <div id="headers">
-          <slot id="main-header" name="mainHeader">idk what happened</slot>
-          <slot id="sub-header" name="subHeader">yeah same here</slot>
+          <slot name="mainHeader">idk what happened</slot>
+          <slot name="subHeader">yeah same</slot>
         </div>
       </div>
     `;
