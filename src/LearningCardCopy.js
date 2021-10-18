@@ -5,16 +5,6 @@ import './Learning-Header.js';
 import './LearningBanner.js';
 import './LearningIcon.js';
 
-// this is the base path to the assets calculated at run time
-// this ensures that assets are shipped correctly when building the demo
-// on github pages, or when people reuse assets outside your elements in production
-// because this won't change we can leverage as an internal variable without being
-// declared in properties. This let's us ship the icons while referencing them correctly
-
-const beaker = new URL('../assets/beaker.svg', import.meta.url).href;
-const lightbulb = new URL('../assets/lightbulb.svg', import.meta.url).href;
-const question = new URL('../assets/question.svg', import.meta.url).href;
-
 // EXPORT (so make available to other documents that reference this file) a class, that extends LitElement
 // which has the magic life-cycles and developer experience below added
 export class LearningCardCopy extends LitElement {
@@ -26,7 +16,9 @@ export class LearningCardCopy extends LitElement {
   // HTMLElement life-cycle, built in; use this for setting defaults
   constructor() {
     super();
-    this.myIcon = null;
+
+    this.userIcon = null;
+
     this.type = 'math';
   }
 
@@ -37,7 +29,7 @@ export class LearningCardCopy extends LitElement {
       type: { type: String, reflect: true },
       // attribute helps us bind the JS spec for variables names to the HTML spec
       // <learning-card my-icon="whatever" will set this.myIcon to "whatever"
-      myIcon: { type: String, attribute: 'my-icon' },
+      userIcon: { type: String, attribute: 'user-icon' },
     };
   }
 
@@ -162,7 +154,7 @@ export class LearningCardCopy extends LitElement {
           <learning-banner></learning-banner>
           <learning-header></learning-header>
           <div id="banner">
-            <learning-icon image=${lightbulb}></learning-icon>
+            <learning-icon image="lightbulb"></learning-icon>
             <div id="headers">
               <h2 id="main-header">I AM MAIN HEADER</h2>
               <h3 id="sub-header">I AM SUB HEADER</h3>

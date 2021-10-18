@@ -2,12 +2,14 @@
 import { html, css } from 'lit';
 import { SimpleColors } from '@lrnwebcomponents/simple-colors/simple-colors';
 
+const beaker = new URL('../assets/beaker.svg', import.meta.url).href;
+const lightbulb = new URL('../assets/lightbulb.svg', import.meta.url).href;
 const question = new URL('../assets/question.svg', import.meta.url).href;
 
 export class LearningIcon extends SimpleColors {
   constructor() {
     super();
-    this.image = question;
+    this.image = null;
     this.dark = false;
   }
 
@@ -51,6 +53,7 @@ export class LearningIcon extends SimpleColors {
         <span><img src="${this.image}" alt="Icon" /></span>
       </div>
     `;
+    // <span><img src = {(${this.image} === "beaker") ? beaker : (${this.image} === "question") ? question: (${this.image} === "lightbulb") : lightbulb} alt="Icon" /></span>
   }
 }
 customElements.define(LearningIcon.tag, LearningIcon);
