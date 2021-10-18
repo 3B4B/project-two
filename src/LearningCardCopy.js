@@ -117,17 +117,17 @@ export class LearningCardCopy extends LitElement {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
       }
 
       #main-header {
-        font-weight: bold;
+        font-weight: lighter;
         font-size: 50px;
         border: 1px solid red;
         margin: 0;
       }
       #sub-header {
-        font-weight: bold;
+        font-weight: 1000;
         font-size: 50px;
         border: 1px solid yellow;
         margin: 0;
@@ -136,6 +136,9 @@ export class LearningCardCopy extends LitElement {
         background-color: white;
         border: 1px solid black;
         border-top: transparent;
+      }
+      #contentContainer {
+        background-color: blue;
       }
       #scaffold-card {
         display: flex;
@@ -159,12 +162,14 @@ export class LearningCardCopy extends LitElement {
               <h3 id="sub-header">I AM SUB HEADER</h3>
             </div>
           </div>
-          <div id="content">
-            <ul>
-              <li>Chem</li>
-              <li>Physics</li>
-              <li>Stat</li>
-            </ul>
+          <div id="contentContainer">
+            <div id="content">
+              <ul>
+                <li>Chem</li>
+                <li>Physics</li>
+                <li>Stat</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
