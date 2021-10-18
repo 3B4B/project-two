@@ -48,10 +48,9 @@ export class LearningIcon extends SimpleColors {
   }
 
   render() {
-    return html`
-      <div>
-        <span><img src="${this.image}" alt="Icon" /></span>
-      </div>
+    return html` <div>
+      <span><img src="${this.image}" alt="Icon" /></span>
+    </div>``
     `;
     // <span><img src = (${this.image} === "beaker") ? beaker: (${this.image} === "question") ? question : (${this.image} === "lightbulb") ? lightbulb : null} alt="Icon" /></span>
   }
