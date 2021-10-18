@@ -67,8 +67,8 @@ export class LearningBanner extends SimpleColors {
       <div id="banner">
         <learning-icon image=${this.image}></learning-icon>
         <div id="headers">
-          <h2 id="main-header">I AM MAIN HEADER</h2>
-          <h3 id="sub-header">I AM SUB HEADER</h3>
+          <slot id="main-header" name="mainHeader">idk what happened</slot>
+          <slot id="sub-header" name="subHeader">yeah same here</slot>
         </div>
       </div>
     `;

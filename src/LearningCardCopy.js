@@ -118,7 +118,10 @@ export class LearningCardCopy extends LitElement {
     return html`
       <div id="entire-card">
         <div id="scaffold-card">
-          <learning-banner image=${lightbulb}></learning-banner>
+          <learning-banner image=${lightbulb}>
+            <p slot="mainHeader">I AM MAIN HEADER</p>
+            <p slot="subHeader">I AM SUB HEADER</p>
+          </learning-banner>
           <div id="content">
             <p>Paragraph starts</p>
             <ul>
