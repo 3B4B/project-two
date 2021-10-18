@@ -1,5 +1,9 @@
+/* eslint-disable no-unused-vars */
 // dependencies / things imported
 import { LitElement, html, css } from 'lit';
+import './Learning-Header.js';
+import './LearningBanner.js';
+import './LearningIcon.js';
 
 // this is the base path to the assets calculated at run time
 // this ensures that assets are shipped correctly when building the demo
@@ -7,8 +11,8 @@ import { LitElement, html, css } from 'lit';
 // because this won't change we can leverage as an internal variable without being
 // declared in properties. This let's us ship the icons while referencing them correctly
 
-// const beaker = new URL('../assets/beaker.svg', import.meta.url).href;
-// const lightbulb = new URL('../assets/lightbulb.svg', import.meta.url).href;
+const beaker = new URL('../assets/beaker.svg', import.meta.url).href;
+const lightbulb = new URL('../assets/lightbulb.svg', import.meta.url).href;
 const question = new URL('../assets/question.svg', import.meta.url).href;
 
 // EXPORT (so make available to other documents that reference this file) a class, that extends LitElement
@@ -70,25 +74,22 @@ export class LearningCardCopy extends LitElement {
   // CSS - specific to Lit
   static get styles() {
     return css`
-      @font-face {
-        font-family: 'Open Sans';
-        src: url('../assets/fonts/OpenSans-Light.ttf');
-      }
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
       :host {
         display: block;
         --learning-card-banner-color: green;
         font-family: 'Open Sans', sans-serif;
       }
       /* this is how you match something on the tag itself like <learning-card type="math"> and then style the img inside */
-      :host([type='math']) img {
+      /* :host([type='math']) img {
         background-color: transparent;
-      }
+      } */
 
       img {
         display: inline-flex;
         height: var(--learning-card-height, 150px);
         width: var(--learning-card-width, 150px);
-        background-color: transparent;
+        background-color: blue;
       }
 
       #iconDiv {
@@ -102,13 +103,15 @@ export class LearningCardCopy extends LitElement {
       #entire-card {
         border-width: 1px;
         background-color: red;
+        font-family: 'Open Sans', sans-serif;
       }
       #banner {
         background-color: var(--learning-card-banner-color);
         display: flex;
         flex-direction: row;
-        font: arial;
+        border: 1px solid var(--learning-card-banner-color);
         color: white;
+        font-family: 'Open Sans', sans-serif;
       }
 
       #headers {
@@ -125,17 +128,20 @@ export class LearningCardCopy extends LitElement {
         font-size: 50px;
         border: 1px solid red;
         margin: 0;
+        padding-left: 30px;
       }
       #sub-header {
         font-weight: 1000;
         font-size: 50px;
         border: 1px solid yellow;
         margin: 0;
+        padding-left: 10px;
       }
       #content {
         background-color: white;
         border: 1px solid black;
         border-top: transparent;
+        padding-left: 190px;
       }
       #contentContainer {
         background-color: blue;
@@ -153,23 +159,25 @@ export class LearningCardCopy extends LitElement {
     return html`
       <div id="entire-card">
         <div id="scaffold-card">
+          <learning-banner></learning-banner>
+          <learning-header></learning-header>
           <div id="banner">
-            <div id="iconDiv">
-              <img part="icon" src="${question}" alt="" />
-            </div>
+            <learning-icon image=${lightbulb}></learning-icon>
             <div id="headers">
               <h2 id="main-header">I AM MAIN HEADER</h2>
               <h3 id="sub-header">I AM SUB HEADER</h3>
             </div>
           </div>
-          <div id="contentContainer">
-            <div id="content">
-              <ul>
-                <li>Chem</li>
-                <li>Physics</li>
-                <li>Stat</li>
-              </ul>
-            </div>
+          <div id="content">
+            <p>Paragraph starts</p>
+            <ul>
+              <li>List Starts</li>
+              <li>Physics</li>
+              <li>Stat</li>
+            </ul>
+            <ol>
+              <li>Numbered List starts</li>
+            </ol>
           </div>
         </div>
       </div>
