@@ -6,6 +6,7 @@ export class LearningBanner extends SimpleColors {
     super();
     this.accentColor = 'blue';
     this.dark = false;
+    // import './LearningIcon.js';
   }
 
   static get tag() {
