@@ -1,9 +1,12 @@
 /* eslint-disable no-unused-vars */
 // dependencies / things imported
 import { LitElement, html, css } from 'lit';
-import './Learning-Header.js';
 import './LearningBanner.js';
 import './LearningIcon.js';
+
+const beaker = new URL('../assets/beaker.svg', import.meta.url).href;
+const lightbulb = new URL('../assets/lightbulb.svg', import.meta.url).href;
+const question = new URL('../assets/question.svg', import.meta.url).href;
 
 // EXPORT (so make available to other documents that reference this file) a class, that extends LitElement
 // which has the magic life-cycles and developer experience below added
@@ -83,7 +86,6 @@ export class LearningCardCopy extends LitElement {
         width: var(--learning-card-width, 150px);
         background-color: blue;
       }
-
       #iconDiv {
         display: flex;
         flex-direction: row;
@@ -91,52 +93,17 @@ export class LearningCardCopy extends LitElement {
         align-items: center;
         border: 1px solid orange;
       }
-
       #entire-card {
         border-width: 1px;
         background-color: red;
         font-family: 'Open Sans', sans-serif;
       }
-      #banner {
-        background-color: var(--learning-card-banner-color);
-        display: flex;
-        flex-direction: row;
-        border: 1px solid var(--learning-card-banner-color);
-        color: white;
-        font-family: 'Open Sans', sans-serif;
-      }
 
-      #headers {
-        padding: 0px;
-        margin: 0px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-      }
-
-      #main-header {
-        font-weight: lighter;
-        font-size: 50px;
-        border: 1px solid red;
-        margin: 0;
-        padding-left: 30px;
-      }
-      #sub-header {
-        font-weight: 1000;
-        font-size: 50px;
-        border: 1px solid yellow;
-        margin: 0;
-        padding-left: 10px;
-      }
       #content {
         background-color: white;
         border: 1px solid black;
         border-top: transparent;
         padding-left: 190px;
-      }
-      #contentContainer {
-        background-color: blue;
       }
       #scaffold-card {
         display: flex;
@@ -151,15 +118,7 @@ export class LearningCardCopy extends LitElement {
     return html`
       <div id="entire-card">
         <div id="scaffold-card">
-          <learning-banner></learning-banner>
-          <learning-header></learning-header>
-          <div id="banner">
-            <learning-icon image="lightbulb"></learning-icon>
-            <div id="headers">
-              <h2 id="main-header">I AM MAIN HEADER</h2>
-              <h3 id="sub-header">I AM SUB HEADER</h3>
-            </div>
-          </div>
+          <learning-banner image=${lightbulb}></learning-banner>
           <div id="content">
             <p>Paragraph starts</p>
             <ul>
