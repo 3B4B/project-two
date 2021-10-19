@@ -1,6 +1,17 @@
 # Team notes
 This is for maintaining communication about your team's working meetings to "ship" the project.
 
+## Tuesday, October 19 In-Class:
+
+Still have to do:
+
+Color in the banner switches
+dynamic import --> follow Joniahs shit
+Removing a slot from the header and applying styling
+Create the scaffold card and file
+
+
+
 ## Thursday, October 14 In-Class:
 What did you take away from the portion of class about implementing SimpleColors?
   - Having something like SimpleColors that can be added and used uniformly allows for better consistency
