@@ -17,6 +17,7 @@ export class LearningBanner extends SimpleColors {
     return {
       ...super.properties,
       image: { type: String, attribute: 'image' },
+      type: { type: String, reflect: true },
     };
   }
 
@@ -53,7 +54,7 @@ export class LearningBanner extends SimpleColors {
   render() {
     return html`
       <div id="banner">
-        <learning-icon image=${this.image}></learning-icon>
+        <learning-icon type=${this.type}></learning-icon>
         <div id="headers">
           <slot name="mainHeader">idk what happened</slot>
           <slot name="subHeader">yeah same</slot>

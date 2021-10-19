@@ -19,10 +19,7 @@ export class LearningCardCopy extends LitElement {
   // HTMLElement life-cycle, built in; use this for setting defaults
   constructor() {
     super();
-
-    this.userIcon = null;
-
-    this.type = 'math';
+    this.type = 'question';
   }
 
   // properties that you wish to use as data in HTML, CSS, and the updated life-cycle
@@ -131,7 +128,7 @@ export class LearningCardCopy extends LitElement {
     return html`
       <div id="entire-card">
         <div id="scaffold-card">
-          <learning-banner image=${lightbulb}>
+          <learning-banner type=${this.type}>
             <p id="main-header" slot="mainHeader">I AM MAIN HEADER</p>
             <p id="sub-header" slot="subHeader">I AM SUB HEADER</p>
           </learning-banner>

@@ -21,7 +21,26 @@ export class LearningIcon extends SimpleColors {
     return {
       ...super.properties,
       image: { type: String, attribute: 'image' },
+      type: { type: String, reflect: true },
     };
+  }
+
+  updated(changedProperties) {
+    console.log('I ran');
+    changedProperties.forEach((oldValue, propName) => {
+      console.log(`Prop name:${propName}Value: ${this[propName]}`);
+      if (propName === 'type' && this[propName] === 'beaker') {
+        this.image = new URL('../assets/beaker.svg', import.meta.url).href;
+      } else if (propName === 'type' && this[propName] === 'question') {
+        this.image = new URL('../assets/question.svg', import.meta.url).href;
+      } else if (propName === 'type' && this[propName] === 'lightbulb') {
+        this.image = new URL('../assets/lightbulb.svg', import.meta.url).href;
+      } else {
+        this.image = null;
+      }
+
+      console.log(`Image Location: ${this.image}`);
+    });
   }
 
   static get styles() {
@@ -48,9 +67,11 @@ export class LearningIcon extends SimpleColors {
   }
 
   render() {
-    return html` <div>
-      <span><img src="${this.image}" alt="Icon" /></span>
-    </div>``
+    console.log(this.image);
+    return html`
+      <div>
+        <span><img src="${this.image}" alt="Icon" /></span>
+      </div>
     `;
     // <span><img src = (${this.image} === "beaker") ? beaker: (${this.image} === "question") ? question : (${this.image} === "lightbulb") ? lightbulb : null} alt="Icon" /></span>
   }
