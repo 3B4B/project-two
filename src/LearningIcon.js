@@ -35,8 +35,6 @@ export class LearningIcon extends SimpleColors {
         this.image = new URL('../assets/question.svg', import.meta.url).href;
       } else if (propName === 'type' && this[propName] === 'lightbulb') {
         this.image = new URL('../assets/lightbulb.svg', import.meta.url).href;
-      } else {
-        this.image = null;
       }
 
       console.log(`Image Location: ${this.image}`);
