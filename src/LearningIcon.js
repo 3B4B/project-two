@@ -29,11 +29,14 @@ export class LearningIcon extends SimpleColors {
     console.log('I ran');
     changedProperties.forEach((oldValue, propName) => {
       console.log(`Prop name:${propName}Value: ${this[propName]}`);
-      if (propName === 'type' && this[propName] === 'beaker') {
+      if (propName === 'type' && this[propName] === 'CHEM CONNECTION') {
         this.image = new URL('../assets/beaker.svg', import.meta.url).href;
-      } else if (propName === 'type' && this[propName] === 'question') {
+      } else if (propName === 'type' && this[propName] === 'DID YOU KNOW?') {
         this.image = new URL('../assets/question.svg', import.meta.url).href;
-      } else if (propName === 'type' && this[propName] === 'lightbulb') {
+      } else if (
+        propName === 'type' &&
+        this[propName] === 'LEARNING OBJECTIVES'
+      ) {
         this.image = new URL('../assets/lightbulb.svg', import.meta.url).href;
       }
 
