@@ -33,20 +33,17 @@ export class LearningBanner extends SimpleColors {
           background-color: var(--learning-card-banner-color);
           display: flex;
           flex-direction: row;
-          border: 1px solid var(--learning-card-banner-color);
           color: white;
           font-family: 'Open Sans', sans-serif;
         }
 
         #grid {
           display: grid;
-          border: 1px solid red;
           grid-template-columns: 1fr 4fr;
           grid-gap: 20px;
         }
 
         .gridItem {
-          border: 4px solid pink;
         }
         :host([type='CHEM CONNECTION']) #banner {
           background-color: green;
@@ -63,6 +60,7 @@ export class LearningBanner extends SimpleColors {
           flex-direction: row;
           color: white;
           font-family: 'Open Sans', sans-serif;
+          margin: 0px;
         }
         #headers {
           padding: 0px;
@@ -78,12 +76,14 @@ export class LearningBanner extends SimpleColors {
 
   render() {
     return html`
-      <div id="grid">
-        <div class="gridItem">
-          <learning-icon type=${this.type}></learning-icon>
-        </div>
-        <div class="gridItem">
-          <learning-header></learning-header>
+      <div id="banner">
+        <div id="grid">
+          <div class="gridItem">
+            <learning-icon type=${this.type}></learning-icon>
+          </div>
+          <div class="gridItem">
+            <learning-header></learning-header>
+          </div>
         </div>
       </div>
     `;
