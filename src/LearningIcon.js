@@ -10,6 +10,7 @@ export class LearningIcon extends SimpleColors {
   constructor() {
     super();
     this.image = null;
+    this.alt = '';
     this.dark = false;
   }
 
@@ -20,8 +21,9 @@ export class LearningIcon extends SimpleColors {
   static get properties() {
     return {
       ...super.properties,
-      image: { type: String, attribute: 'image' },
+      image: { type: String },
       type: { type: String, reflect: true },
+      alt: { type: String },
     };
   }
 
@@ -77,7 +79,7 @@ export class LearningIcon extends SimpleColors {
     console.log(this.image);
     return html`
       <div>
-        <span><img src="${this.image}" alt="Icon" /></span>
+        <span><img src="${this.image}" alt="${this.alt}" /></span>
       </div>
     `;
     // <span><img src = (${this.image} === "beaker") ? beaker: (${this.image} === "question") ? question : (${this.image} === "lightbulb") ? lightbulb : null} alt="Icon" /></span>

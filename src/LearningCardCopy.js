@@ -3,7 +3,6 @@
 import { LitElement, html, css } from 'lit';
 import './LearningScaffold.js';
 
-
 // EXPORT (so make available to other documents that reference this file) a class, that extends LitElement
 // which has the magic life-cycles and developer experience below added
 export class LearningCardCopy extends LitElement {
@@ -17,7 +16,6 @@ export class LearningCardCopy extends LitElement {
     super();
     this.myIcon = null;
     this.type = 'question';
-
   }
 
   // properties that you wish to use as data in HTML, CSS, and the updated life-cycle
@@ -65,7 +63,6 @@ export class LearningCardCopy extends LitElement {
   static get styles() {
     return css`
       #scaffold-card {
-        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
         :host {
           display: block;
           --learning-card-banner-color: green;
