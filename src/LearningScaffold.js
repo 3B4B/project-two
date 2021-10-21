@@ -18,6 +18,7 @@ export class LearningScaffold extends SimpleColors {
   static get properties() {
     return {
       ...super.properties,
+      type: { type: String, reflect: true },
     };
   }
 
@@ -51,7 +52,7 @@ export class LearningScaffold extends SimpleColors {
       <div>
         <span>
           <div id="banner">
-            <learning-banner accent-color="orange"></learning-banner>
+            <learning-banner type=${this.type}></learning-banner>
           </div>
           <div id="content">
             <ul>

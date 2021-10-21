@@ -5,16 +5,6 @@ import { SimpleColors } from '@lrnwebcomponents/simple-colors/simple-colors';
 import './LearningHeader.js';
 import './LearningIcon.js';
 
-// this is the base path to the assets calculated at run time
-// this ensures that assets are shipped correctly when building the demo
-// on github pages, or when people reuse assets outside your elements in production
-// because this won't change we can leverage as an internal variable without being
-// declared in properties. This let's us ship the icons while referencing them correctly
-
-const beaker = new URL('../assets/beaker.svg', import.meta.url).href;
-const lightbulb = new URL('../assets/lightbulb.svg', import.meta.url).href;
-const question = new URL('../assets/question.svg', import.meta.url).href;
-
 export class LearningBanner extends SimpleColors {
   constructor() {
     super();
@@ -83,7 +73,7 @@ export class LearningBanner extends SimpleColors {
     return html`
       <div id="grid">
         <div class="gridItem">
-          <learning-icon image=${this.type}></learning-icon>
+          <learning-icon type=${this.type}></learning-icon>
         </div>
         <div class="gridItem">
           <learning-header></learning-header>
