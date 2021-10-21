@@ -119,6 +119,7 @@ Next Steps
 ### Check-in 2
 - [x] Basic API to render the icon based on having the correct name leveraged
 - [x] Header / banner element should have a basic API supporting two named slots and implementing your icon
+
 - [ ] Definition should be dynamically imported in the constructor or firstUpdated life-cycle of the header / banner element (reading and examples before should help inform this)
 
 The dynamic import was not working.  When just declaring the learning-icon on line 9 of LearningBanner.js and commenting out line 5 of LearningCardCopy.js, everything disappears when running "yarn start".  Is there something with HAX we are forgetting to change?
@@ -128,6 +129,7 @@ We also attempted to use a terenary operator to determine the icon but that wasn
 How come I can't apply styling to the slot tag in LearningBanner.js and all styling has to be done on the actual <p> in LearningCardCopy.js?
 
 Also once we get the banner working fully this branch "feature/Banner will be merged back into master".
+
 ### Check-in 3
 - 
 - 
