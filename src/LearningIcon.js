@@ -55,8 +55,25 @@ export class LearningIcon extends SimpleColors {
           flex-direction: row;
           height: var(--learning-card-height, 150px);
           width: var(--learning-card-width, 150px);
-          border: 1px dotted cyan;
-          background-color: var(--learning-card-banner-color);
+        }
+        :host([type='CHEM CONNECTION']) {
+          background-color: green;
+        }
+        :host([type='CHEM CONNECTION']) img {
+          fill: green;
+        }
+        :host([type='LEARNING OBJECTIVES']) {
+          background-color: orange;
+        }
+        :host([type='LEARNING OBJECTIVES']) img {
+          fill: orange;
+        }
+
+        :host([type='DID YOU KNOW?']) {
+          background-color: blue;
+        }
+        :host([type='DID YOU KNOW?']) img {
+          fill: blue;
         }
         span {
           display: inline-flex;

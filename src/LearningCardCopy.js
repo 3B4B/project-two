@@ -62,23 +62,27 @@ export class LearningCardCopy extends LitElement {
   // CSS - specific to Lit
   static get styles() {
     return css`
+      :host {
+        display: block;
+        --learning-card-banner-color: green;
+        font-family: 'Open Sans', sans-serif;
+      }
       #scaffold-card {
         :host {
           display: block;
           --learning-card-banner-color: green;
           font-family: 'Open Sans', sans-serif;
         }
-      
+ 
       /* this is how you match something on the tag itself like <learning-card type="math"> and then style the img inside */
       /* :host([type='math']) img {
         background-color: transparent;
       } */
       #entire-card {
-        border-width: 1px;
-        background-color: orange;
+        border-width: 20px solid black;
+        max-width: 700px;
         font-family: 'Open Sans', sans-serif;
       }
-
     `;
   }
 
@@ -87,14 +91,12 @@ export class LearningCardCopy extends LitElement {
     return html`
       <div id="entire-card">
         <div id="scaffold-card">
-          <learning-scaffold></learning-scaffold>
+          <learning-scaffold type=${this.type}></learning-scaffold>
         </div>
       </div>
     `;
   }
 
-  // HAX specific callback
-  // This teaches HAX how to edit and work with your web component
   /**
    * haxProperties integration via file reference
    */
