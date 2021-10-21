@@ -79,7 +79,6 @@ export class LearningCardCopy extends LitElement {
         background-color: transparent;
       } */
       #entire-card {
-        border-width: 20px solid black;
         max-width: 700px;
         font-family: 'Open Sans', sans-serif;
       }
@@ -90,9 +89,7 @@ export class LearningCardCopy extends LitElement {
   render() {
     return html`
       <div id="entire-card">
-        <div id="scaffold-card">
-          <learning-scaffold type=${this.type}></learning-scaffold>
-        </div>
+        <learning-scaffold type=${this.type}></learning-scaffold>
       </div>
     `;
   }

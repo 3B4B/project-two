@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { html, css } from 'lit';
 import { SimpleColors } from '@lrnwebcomponents/simple-colors/simple-colors';
-import './LearningHeader.js';
+
 import './LearningBanner.js';
 import './LearningIcon.js';
 
@@ -40,8 +40,15 @@ export class LearningScaffold extends SimpleColors {
           background-color: white;
           border: 1px solid black;
           border-top: transparent;
+          padding-top: 5px;
+          padding-bottom: 5px;
           padding-left: 150px;
           margin: 0px;
+        }
+
+        ul {
+          margin: 0px;
+          padding: 0px;
         }
       `,
     ];
