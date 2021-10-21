@@ -1,15 +1,8 @@
 /* eslint-disable no-unused-vars */
 // dependencies / things imported
 import { LitElement, html, css } from 'lit';
-import './Learning-Header.js';
 import './LearningBanner.js';
 import './LearningIcon.js';
-
-// this is the base path to the assets calculated at run time
-// this ensures that assets are shipped correctly when building the demo
-// on github pages, or when people reuse assets outside your elements in production
-// because this won't change we can leverage as an internal variable without being
-// declared in properties. This let's us ship the icons while referencing them correctly
 
 const beaker = new URL('../assets/beaker.svg', import.meta.url).href;
 const lightbulb = new URL('../assets/lightbulb.svg', import.meta.url).href;
@@ -26,8 +19,7 @@ export class LearningCardCopy extends LitElement {
   // HTMLElement life-cycle, built in; use this for setting defaults
   constructor() {
     super();
-    this.myIcon = null;
-    this.type = 'math';
+    this.type = 'question';
   }
 
   // properties that you wish to use as data in HTML, CSS, and the updated life-cycle
@@ -37,7 +29,7 @@ export class LearningCardCopy extends LitElement {
       type: { type: String, reflect: true },
       // attribute helps us bind the JS spec for variables names to the HTML spec
       // <learning-card my-icon="whatever" will set this.myIcon to "whatever"
-      myIcon: { type: String, attribute: 'my-icon' },
+      userIcon: { type: String, attribute: 'user-icon' },
     };
   }
 
@@ -91,7 +83,6 @@ export class LearningCardCopy extends LitElement {
         width: var(--learning-card-width, 150px);
         background-color: blue;
       }
-
       #iconDiv {
         display: flex;
         flex-direction: row;
@@ -99,58 +90,36 @@ export class LearningCardCopy extends LitElement {
         align-items: center;
         border: 1px solid orange;
       }
-
       #entire-card {
         border-width: 1px;
         background-color: red;
         font-family: 'Open Sans', sans-serif;
       }
-      #banner {
-        background-color: var(--learning-card-banner-color);
-        display: flex;
-        flex-direction: row;
-        border: 1px solid var(--learning-card-banner-color);
-        color: white;
-        font-family: 'Open Sans', sans-serif;
-      }
 
-      #headers {
-        padding: 0px;
-        margin: 0px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-      }
-
-      #main-header {
-        font-weight: lighter;
-        font-size: 50px;
-        border: 1px solid red;
-        margin: 0;
-        padding-left: 30px;
-      }
-      #sub-header {
-        font-weight: 1000;
-        font-size: 50px;
-        border: 1px solid yellow;
-        margin: 0;
-        padding-left: 10px;
-      }
       #content {
         background-color: white;
         border: 1px solid black;
         border-top: transparent;
         padding-left: 190px;
       }
-      #contentContainer {
-        background-color: blue;
-      }
       #scaffold-card {
         display: flex;
         flex-direction: column;
         border-color: black;
       }
+      #main-header {
+          font-weight: 300;
+          font-size: 50px;
+          border: 1px solid red;
+          margin: 0;
+          padding-left: 30px;
+        }
+        #sub-header {
+          font-weight: 500;
+          font-size: 50px;
+          border: 1px solid yellow;
+          margin: 0;
+          padding-left: 10px;
     `;
   }
 
@@ -159,15 +128,10 @@ export class LearningCardCopy extends LitElement {
     return html`
       <div id="entire-card">
         <div id="scaffold-card">
-          <learning-banner></learning-banner>
-          <learning-header></learning-header>
-          <div id="banner">
-            <learning-icon image=${lightbulb}></learning-icon>
-            <div id="headers">
-              <h2 id="main-header">I AM MAIN HEADER</h2>
-              <h3 id="sub-header">I AM SUB HEADER</h3>
-            </div>
-          </div>
+          <learning-banner type=${this.type}>
+            <p id="main-header" slot="mainHeader">I AM MAIN HEADER</p>
+            <p id="sub-header" slot="subHeader">I AM SUB HEADER</p>
+          </learning-banner>
           <div id="content">
             <p>Paragraph starts</p>
             <ul>
