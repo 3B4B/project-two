@@ -29,7 +29,6 @@ export class LearningScaffold extends SimpleColors {
         @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
         :host {
           display: block;
-          --learning-card-banner-color: green;
           font-family: 'Open Sans', sans-serif;
         }
         /* this is how you match something on the tag itself like <learning-card type="math"> and then style the img inside */
@@ -41,7 +40,8 @@ export class LearningScaffold extends SimpleColors {
           background-color: white;
           border: 1px solid black;
           border-top: transparent;
-          padding-left: 190px;
+          padding-left: 150px;
+          margin: 0px;
         }
       `,
     ];
@@ -49,26 +49,22 @@ export class LearningScaffold extends SimpleColors {
 
   render() {
     return html`
-      <div>
-        <span>
-          <div id="banner">
-            <learning-banner type=${this.type}></learning-banner>
-          </div>
-          <div id="content">
-            <ul>
-              <li>Describe the subatomic particles that make up an atom</li>
-              <li>
-                Use the periodic table to determine the numbers of protons and
-                electrons in a neutral (uncharged) atom.
-              </li>
-              <li>Describe the subatomic particles that make up an atom.</li>
-              <li>
-                Use the periodic table to determine the numbers of protons and
-                electrons in a neutral (uncharged) atom.
-              </li>
-            </ul>
-          </div></span
-        >
+      <div id="banner">
+        <learning-banner type=${this.type}></learning-banner>
+      </div>
+      <div id="content">
+        <ul>
+          <li>Describe the subatomic particles that make up an atom</li>
+          <li>
+            Use the periodic table to determine the numbers of protons and
+            electrons in a neutral (uncharged) atom.
+          </li>
+          <li>Describe the subatomic particles that make up an atom.</li>
+          <li>
+            Use the periodic table to determine the numbers of protons and
+            electrons in a neutral (uncharged) atom.
+          </li>
+        </ul>
       </div>
     `;
   }

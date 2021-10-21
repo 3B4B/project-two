@@ -15,7 +15,6 @@ export class LearningCardCopy extends LitElement {
   constructor() {
     super();
     this.myIcon = null;
-    this.type = 'question';
   }
 
   // properties that you wish to use as data in HTML, CSS, and the updated life-cycle
@@ -73,8 +72,8 @@ export class LearningCardCopy extends LitElement {
         background-color: transparent;
       } */
       #entire-card {
-        border-width: 1px;
-        background-color: orange;
+        border-width: 20px solid black;
+        max-width: 700px;
         font-family: 'Open Sans', sans-serif;
       }
     `;
@@ -85,7 +84,7 @@ export class LearningCardCopy extends LitElement {
     return html`
       <div id="entire-card">
         <div id="scaffold-card">
-          <learning-scaffold type="CHEM CONNECTION"></learning-scaffold>
+          <learning-scaffold type=${this.type}></learning-scaffold>
         </div>
       </div>
     `;
