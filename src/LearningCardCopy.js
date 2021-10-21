@@ -15,6 +15,7 @@ export class LearningCardCopy extends LitElement {
   constructor() {
     super();
     this.myIcon = null;
+    this.type = 'question';
   }
 
   // properties that you wish to use as data in HTML, CSS, and the updated life-cycle
@@ -66,7 +67,13 @@ export class LearningCardCopy extends LitElement {
         --learning-card-banner-color: green;
         font-family: 'Open Sans', sans-serif;
       }
-
+      #scaffold-card {
+        :host {
+          display: block;
+          --learning-card-banner-color: green;
+          font-family: 'Open Sans', sans-serif;
+        }
+ 
       /* this is how you match something on the tag itself like <learning-card type="math"> and then style the img inside */
       /* :host([type='math']) img {
         background-color: transparent;
