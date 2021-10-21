@@ -1,12 +1,7 @@
 /* eslint-disable no-unused-vars */
 // dependencies / things imported
 import { LitElement, html, css } from 'lit';
-import './LearningBanner.js';
-import './LearningIcon.js';
-
-const beaker = new URL('../assets/beaker.svg', import.meta.url).href;
-const lightbulb = new URL('../assets/lightbulb.svg', import.meta.url).href;
-const question = new URL('../assets/question.svg', import.meta.url).href;
+import './LearningScaffold.js';
 
 // EXPORT (so make available to other documents that reference this file) a class, that extends LitElement
 // which has the magic life-cycles and developer experience below added
@@ -19,6 +14,7 @@ export class LearningCardCopy extends LitElement {
   // HTMLElement life-cycle, built in; use this for setting defaults
   constructor() {
     super();
+    this.myIcon = null;
     this.type = 'question';
   }
 
@@ -37,7 +33,7 @@ export class LearningCardCopy extends LitElement {
   // this allows you to react to variables changing and use javascript to perform logic
   updated(changedProperties) {
     changedProperties.forEach((oldValue, propName) => {
-      if (propName === 'type' && this[propName] === 'science') {
+      if (propName === 'type' && this[propName] === 'Science') {
         this.myIcon = 'beaker';
       }
     });
@@ -71,54 +67,16 @@ export class LearningCardCopy extends LitElement {
         --learning-card-banner-color: green;
         font-family: 'Open Sans', sans-serif;
       }
+
       /* this is how you match something on the tag itself like <learning-card type="math"> and then style the img inside */
       /* :host([type='math']) img {
         background-color: transparent;
       } */
-
-      img {
-        display: inline-flex;
-        height: var(--learning-card-height, 150px);
-        width: var(--learning-card-width, 150px);
-        background-color: blue;
-      }
-      #iconDiv {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid orange;
-      }
       #entire-card {
         border-width: 1px;
-        background-color: red;
+        background-color: orange;
         font-family: 'Open Sans', sans-serif;
       }
-
-      #content {
-        background-color: white;
-        border: 1px solid black;
-        border-top: transparent;
-        padding-left: 190px;
-      }
-      #scaffold-card {
-        display: flex;
-        flex-direction: column;
-        border-color: black;
-      }
-      #main-header {
-          font-weight: 300;
-          font-size: 50px;
-
-          margin: 0;
-          padding-left: 30px;
-        }
-        #sub-header {
-          font-weight: 500;
-          font-size: 50px;
-
-          margin: 0;
-          padding-left: 10px;
     `;
   }
 
@@ -127,28 +85,12 @@ export class LearningCardCopy extends LitElement {
     return html`
       <div id="entire-card">
         <div id="scaffold-card">
-          <learning-banner type=${this.type}>
-            <p id="main-header" slot="mainHeader">I AM MAIN HEADER</p>
-            <p id="sub-header" slot="subHeader">I AM SUB HEADER</p>
-          </learning-banner>
-          <div id="content">
-            <p>Paragraph starts</p>
-            <ul>
-              <li>List Starts</li>
-              <li>Physics</li>
-              <li>Stat</li>
-            </ul>
-            <ol>
-              <li>Numbered List starts</li>
-            </ol>
-          </div>
+          <learning-scaffold type="CHEM CONNECTION"></learning-scaffold>
         </div>
       </div>
     `;
   }
 
-  // HAX specific callback
-  // This teaches HAX how to edit and work with your web component
   /**
    * haxProperties integration via file reference
    */

@@ -71,6 +71,12 @@ export class LearningIcon extends SimpleColors {
           justify-content: center;
           align-items: center;
         }
+        img {
+          display: inline-flex;
+          height: var(--learning-card-height, 150px);
+          width: var(--learning-card-width, 150px);
+          background-color: var(--learning-banner-color);
+        }
       `,
     ];
   }
