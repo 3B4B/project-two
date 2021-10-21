@@ -1,6 +1,17 @@
 # Team notes
 This is for maintaining communication about your team's working meetings to "ship" the project.
 
+## Tuesday, October 19 In-Class:
+
+Still have to do:
+
+Color in the banner switches
+dynamic import --> follow Joniahs shit
+Removing a slot from the header and applying styling
+Create the scaffold card and file
+
+
+
 ## Thursday, October 14 In-Class:
 What did you take away from the portion of class about implementing SimpleColors?
   - Having something like SimpleColors that can be added and used uniformly allows for better consistency
@@ -108,7 +119,17 @@ Next Steps
 ### Check-in 2
 - [x] Basic API to render the icon based on having the correct name leveraged
 - [x] Header / banner element should have a basic API supporting two named slots and implementing your icon
-- [x] Definition should be dynamically imported in the constructor or firstUpdated life-cycle of the header / banner element (reading and examples before should help inform this)
+
+- [ ] Definition should be dynamically imported in the constructor or firstUpdated life-cycle of the header / banner element (reading and examples before should help inform this)
+
+The dynamic import was not working.  When just declaring the learning-icon on line 9 of LearningBanner.js and commenting out line 5 of LearningCardCopy.js, everything disappears when running "yarn start".  Is there something with HAX we are forgetting to change?
+
+We also attempted to use a terenary operator to determine the icon but that wasn't working well either.  Can you show an example of a multiple condition terenary operator in-class?
+
+How come I can't apply styling to the slot tag in LearningBanner.js and all styling has to be done on the actual <p> in LearningCardCopy.js?
+
+Also once we get the banner working fully this branch "feature/Banner will be merged back into master".
+
 ### Check-in 3
 - 
 - 

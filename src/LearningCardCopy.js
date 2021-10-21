@@ -3,6 +3,7 @@
 import { LitElement, html, css } from 'lit';
 import './LearningScaffold.js';
 
+
 // EXPORT (so make available to other documents that reference this file) a class, that extends LitElement
 // which has the magic life-cycles and developer experience below added
 export class LearningCardCopy extends LitElement {
@@ -15,7 +16,8 @@ export class LearningCardCopy extends LitElement {
   constructor() {
     super();
     this.myIcon = null;
-    this.type = 'science';
+    this.type = 'question';
+
   }
 
   // properties that you wish to use as data in HTML, CSS, and the updated life-cycle
@@ -25,7 +27,7 @@ export class LearningCardCopy extends LitElement {
       type: { type: String, reflect: true },
       // attribute helps us bind the JS spec for variables names to the HTML spec
       // <learning-card my-icon="whatever" will set this.myIcon to "whatever"
-      myIcon: { type: String, attribute: 'my-icon' },
+      userIcon: { type: String, attribute: 'user-icon' },
     };
   }
 
@@ -63,15 +65,23 @@ export class LearningCardCopy extends LitElement {
   static get styles() {
     return css`
       #scaffold-card {
-        display: flex;
-        flex-direction: column;
-        border-color: black;
-      }
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+        :host {
+          display: block;
+          --learning-card-banner-color: green;
+          font-family: 'Open Sans', sans-serif;
+        }
+      
+      /* this is how you match something on the tag itself like <learning-card type="math"> and then style the img inside */
+      /* :host([type='math']) img {
+        background-color: transparent;
+      } */
       #entire-card {
         border-width: 1px;
         background-color: orange;
         font-family: 'Open Sans', sans-serif;
       }
+
     `;
   }
 

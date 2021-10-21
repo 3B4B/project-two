@@ -20,6 +20,7 @@ export class LearningBanner extends SimpleColors {
     super();
     this.accentColor = 'blue';
     this.dark = false;
+    // import './LearningIcon.js';
   }
 
   static get tag() {
@@ -29,6 +30,8 @@ export class LearningBanner extends SimpleColors {
   static get properties() {
     return {
       ...super.properties,
+      image: { type: String, attribute: 'image' },
+      type: { type: String, reflect: true },
     };
   }
 
@@ -55,6 +58,23 @@ export class LearningBanner extends SimpleColors {
         .gridItem {
           border: 4px solid pink;
         }
+        #banner {
+          background-color: var(--learning-card-banner-color);
+          display: flex;
+          flex-direction: row;
+          border: 1px solid var(--learning-card-banner-color);
+          color: white;
+          font-family: 'Open Sans', sans-serif;
+        }
+        #headers {
+          padding: 0px;
+          margin: 0px;
+          display: flex;
+          border: 2px solid red;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
       `,
     ];
   }
@@ -63,7 +83,7 @@ export class LearningBanner extends SimpleColors {
     return html`
       <div id="grid">
         <div class="gridItem">
-          <learning-icon image=${lightbulb}></learning-icon>
+          <learning-icon image=${this.type}></learning-icon>
         </div>
         <div class="gridItem">
           <learning-header></learning-header>
