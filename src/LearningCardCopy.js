@@ -66,7 +66,6 @@ export class LearningCardCopy extends LitElement {
   // CSS - specific to Lit
   static get styles() {
     return css`
-      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
       :host {
         display: block;
         --learning-card-banner-color: green;
@@ -110,14 +109,14 @@ export class LearningCardCopy extends LitElement {
       #main-header {
           font-weight: 300;
           font-size: 50px;
-          border: 1px solid red;
+
           margin: 0;
           padding-left: 30px;
         }
         #sub-header {
           font-weight: 500;
           font-size: 50px;
-          border: 1px solid yellow;
+
           margin: 0;
           padding-left: 10px;
     `;
