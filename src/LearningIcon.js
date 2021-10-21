@@ -32,7 +32,7 @@ export class LearningIcon extends SimpleColors {
           height: var(--learning-card-height, 150px);
           width: var(--learning-card-width, 150px);
           border: 1px dotted cyan;
-          background-color: blue;
+          background-color: var(--learning-card-banner-color);
         }
         span {
           display: inline-flex;
@@ -40,6 +40,12 @@ export class LearningIcon extends SimpleColors {
           width: var(--learning-card-width, 150px);
           justify-content: center;
           align-items: center;
+        }
+        img {
+          display: inline-flex;
+          height: var(--learning-card-height, 150px);
+          width: var(--learning-card-width, 150px);
+          background-color: var(--learning-banner-color);
         }
       `,
     ];

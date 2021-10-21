@@ -51,10 +51,9 @@ export class LearningScaffold extends SimpleColors {
       <div>
         <span>
           <div id="banner">
-            <learning-banner></learning-banner>
+            <learning-banner accent-color="orange"></learning-banner>
           </div>
           <div id="content">
-            <p>Paragraph starts</p>
             <ul>
               <li>Describe the subatomic particles that make up an atom</li>
               <li>
@@ -67,9 +66,6 @@ export class LearningScaffold extends SimpleColors {
                 electrons in a neutral (uncharged) atom.
               </li>
             </ul>
-            <ol>
-              <li>Numbered List starts</li>
-            </ol>
           </div></span
         >
       </div>

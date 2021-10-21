@@ -87,7 +87,6 @@ export class LearningCard extends LitElement {
   // HTML - specific to Lit
   render() {
     return html`
-      <h1>cool</h1>
       <div>${this.type}</div>
       <div>
         <div

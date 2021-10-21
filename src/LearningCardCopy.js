@@ -15,7 +15,7 @@ export class LearningCardCopy extends LitElement {
   constructor() {
     super();
     this.myIcon = null;
-    this.type = 'math';
+    this.type = 'science';
   }
 
   // properties that you wish to use as data in HTML, CSS, and the updated life-cycle
@@ -33,7 +33,7 @@ export class LearningCardCopy extends LitElement {
   // this allows you to react to variables changing and use javascript to perform logic
   updated(changedProperties) {
     changedProperties.forEach((oldValue, propName) => {
-      if (propName === 'type' && this[propName] === 'science') {
+      if (propName === 'type' && this[propName] === 'Science') {
         this.myIcon = 'beaker';
       }
     });
@@ -69,7 +69,7 @@ export class LearningCardCopy extends LitElement {
       }
       #entire-card {
         border-width: 1px;
-        background-color: red;
+        background-color: orange;
         font-family: 'Open Sans', sans-serif;
       }
     `;

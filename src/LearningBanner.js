@@ -36,21 +36,6 @@ export class LearningBanner extends SimpleColors {
     return [
       ...super.styles,
       css`
-        img {
-          display: inline-flex;
-          height: var(--learning-card-height, 150px);
-          width: var(--learning-card-width, 150px);
-          background-color: blue;
-        }
-
-        #iconDiv {
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
-          border: 1px solid orange;
-        }
-
         #banner {
           background-color: var(--learning-card-banner-color);
           display: flex;
@@ -80,7 +65,9 @@ export class LearningBanner extends SimpleColors {
         <div class="gridItem">
           <learning-icon image=${lightbulb}></learning-icon>
         </div>
-        <div class="gridItem"><learning-header></learning-header></div>
+        <div class="gridItem">
+          <learning-header></learning-header>
+        </div>
       </div>
     `;
   }
