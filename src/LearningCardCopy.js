@@ -62,8 +62,7 @@ export class LearningCardCopy extends LitElement {
   // CSS - specific to Lit
   static get styles() {
     return css`
-      #scaffold-card {
-        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+      :host {
         display: block;
         --learning-card-banner-color: green;
         font-family: 'Open Sans', sans-serif;

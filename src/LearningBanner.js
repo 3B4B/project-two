@@ -48,11 +48,19 @@ export class LearningBanner extends SimpleColors {
         .gridItem {
           border: 4px solid pink;
         }
+        :host([type='CHEM CONNECTION']) #banner {
+          background-color: green;
+        }
+        :host([type='LEARNING OBJECTIVES']) #banner {
+          background-color: orange;
+        }
+        :host([type='DID YOU KNOW?']) #banner {
+          background-color: blue;
+        }
         #banner {
           background-color: var(--learning-card-banner-color);
           display: flex;
           flex-direction: row;
-          border: 1px solid var(--learning-card-banner-color);
           color: white;
           font-family: 'Open Sans', sans-serif;
         }
@@ -60,7 +68,6 @@ export class LearningBanner extends SimpleColors {
           padding: 0px;
           margin: 0px;
           display: flex;
-          border: 2px solid red;
           flex-direction: column;
           justify-content: center;
           align-items: center;
