@@ -3,7 +3,6 @@
 import { LitElement, html, css } from 'lit';
 import './LearningScaffold.js';
 
-
 // EXPORT (so make available to other documents that reference this file) a class, that extends LitElement
 // which has the magic life-cycles and developer experience below added
 export class LearningCardCopy extends LitElement {
@@ -17,7 +16,6 @@ export class LearningCardCopy extends LitElement {
     super();
     this.myIcon = null;
     this.type = 'question';
-
   }
 
   // properties that you wish to use as data in HTML, CSS, and the updated life-cycle
@@ -64,14 +62,12 @@ export class LearningCardCopy extends LitElement {
   // CSS - specific to Lit
   static get styles() {
     return css`
-      #scaffold-card {
-        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
-        :host {
-          display: block;
-          --learning-card-banner-color: green;
-          font-family: 'Open Sans', sans-serif;
-        }
-      
+      :host {
+        display: block;
+        --learning-card-banner-color: green;
+        font-family: 'Open Sans', sans-serif;
+      }
+
       /* this is how you match something on the tag itself like <learning-card type="math"> and then style the img inside */
       /* :host([type='math']) img {
         background-color: transparent;
@@ -81,7 +77,6 @@ export class LearningCardCopy extends LitElement {
         background-color: orange;
         font-family: 'Open Sans', sans-serif;
       }
-
     `;
   }
 
@@ -90,14 +85,12 @@ export class LearningCardCopy extends LitElement {
     return html`
       <div id="entire-card">
         <div id="scaffold-card">
-          <learning-scaffold></learning-scaffold>
+          <learning-scaffold type="CHEM CONNECTION"></learning-scaffold>
         </div>
       </div>
     `;
   }
 
-  // HAX specific callback
-  // This teaches HAX how to edit and work with your web component
   /**
    * haxProperties integration via file reference
    */
