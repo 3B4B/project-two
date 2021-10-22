@@ -2,7 +2,6 @@
 import { html, css } from 'lit';
 import { SimpleColors } from '@lrnwebcomponents/simple-colors/simple-colors';
 
-import './LearningHeader.js';
 import './LearningIcon.js';
 
 export class LearningBanner extends SimpleColors {
@@ -10,7 +9,6 @@ export class LearningBanner extends SimpleColors {
     super();
     this.accentColor = 'blue';
     this.dark = false;
-    // import './LearningIcon.js';
   }
 
   static get tag() {
@@ -62,13 +60,17 @@ export class LearningBanner extends SimpleColors {
           font-family: 'Open Sans', sans-serif;
           margin: 0px;
         }
-        #headers {
-          padding: 0px;
-          margin: 0px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
+        #main-header {
+          font-weight: 300;
+          font-size: 50px;
+          /* border: 1px solid blue; */
+          margin: 0;
+        }
+        #sub-header {
+          font-weight: 500;
+          font-size: 50px;
+          /* border: 1px solid yellow; */
+          margin: 0;
         }
       `,
     ];
@@ -79,10 +81,12 @@ export class LearningBanner extends SimpleColors {
       <div id="banner">
         <div id="grid">
           <div class="gridItem">
-            <learning-icon type=${this.type}></learning-icon>
+            <slot name="icon"></slot>
           </div>
           <div class="gridItem">
-            <learning-header></learning-header>
+            <slot name="heading"></slot>
+            <slot name="subHeading"></slot>
+      </div>
           </div>
         </div>
       </div>

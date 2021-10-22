@@ -1,14 +1,8 @@
+/* eslint-disable no-unused-vars */
 // dependencies / things imported
 import { LitElement, html, css } from 'lit';
+import './LearningScaffold.js';
 
-// this is the base path to the assets calculated at run time
-// this ensures that assets are shipped correctly when building the demo
-// on github pages, or when people reuse assets outside your elements in production
-// because this won't change we can leverage as an internal variable without being
-// declared in properties. This let's us ship the icons while referencing them correctly
-const beaker = new URL('../assets/beaker.svg', import.meta.url).href;
-const lightbulb = new URL('../assets/lightbulb.svg', import.meta.url).href;
-const question = new URL('../assets/question.svg', import.meta.url).href;
 // EXPORT (so make available to other documents that reference this file) a class, that extends LitElement
 // which has the magic life-cycles and developer experience below added
 export class LearningCard extends LitElement {
@@ -21,7 +15,7 @@ export class LearningCard extends LitElement {
   constructor() {
     super();
     this.myIcon = null;
-    this.type = 'math';
+    this.type = 'question';
   }
 
   // properties that you wish to use as data in HTML, CSS, and the updated life-cycle
@@ -31,7 +25,7 @@ export class LearningCard extends LitElement {
       type: { type: String, reflect: true },
       // attribute helps us bind the JS spec for variables names to the HTML spec
       // <learning-card my-icon="whatever" will set this.myIcon to "whatever"
-      myIcon: { type: String, attribute: 'my-icon' },
+      userIcon: { type: String, attribute: 'user-icon' },
     };
   }
 
@@ -39,7 +33,7 @@ export class LearningCard extends LitElement {
   // this allows you to react to variables changing and use javascript to perform logic
   updated(changedProperties) {
     changedProperties.forEach((oldValue, propName) => {
-      if (propName === 'type' && this[propName] === 'science') {
+      if (propName === 'type' && this[propName] === 'Science') {
         this.myIcon = 'beaker';
       }
     });
@@ -70,49 +64,72 @@ export class LearningCard extends LitElement {
     return css`
       :host {
         display: block;
+        --learning-card-banner-color: green;
+        font-family: 'Open Sans', sans-serif;
+        margin-top: 100px;
       }
+      #scaffold-card {
+        :host {
+          display: block;
+          --learning-card-banner-color: green;
+          font-family: 'Open Sans', sans-serif;
+          
+        }
+ 
       /* this is how you match something on the tag itself like <learning-card type="math"> and then style the img inside */
-      :host([type='math']) img {
-        background-color: purple;
+      /* :host([type='math']) img {
+        background-color: transparent;
+      } */
+      #entire-card {
+        max-width: 700px;
+        font-family: 'Open Sans', sans-serif;
+
       }
-      img {
-        display: inline-flex;
-        height: var(--learning-card-height, 100px);
-        width: var(--learning-card-width, 100px);
-        background-color: green;
-      }
+      #main-header {
+          font-weight: 300;
+          font-size: 50px;
+          /* border: 1px solid blue; */
+          margin: 0;
+        }
+        #sub-header {
+          font-weight: 500;
+          font-size: 50px;
+          /* border: 1px solid yellow; */
+          margin: 0;
+        }
     `;
   }
 
   // HTML - specific to Lit
   render() {
     return html`
-      <div>${this.type}</div>
-      <div>
-        <div
-          class="slot-wrapper"
-          data-label="Header"
-          data-layout-slotname="header"
-        >
-          <slot name="header"></slot>
-        </div>
-        <img part="icon" src="${beaker}" alt="" />
-        <img part="icon" src="${lightbulb}" alt="" />
-        <img part="icon" src="${question}" alt="" />
-        <div
-          class="slot-wrapper"
-          data-label="Content"
-          data-layout-slotname="content"
-        >
-          <slot name="content"></slot>
-          <slot></slot>
-        </div>
+      <div id="entire-card">
+        <learning-scaffold type=${this.type}>
+          <learning-banner type=${this.type} slot="banner">
+            <learning-icon type=${this.type} slot="icon"></learning-icon>
+            <h2 id="main-header" slot="heading">Unit 1</h2>
+            <h3 id="sub-header" slot="subHeading">Learning Objectives</h3>
+          </learning-banner>
+          <div slot="content">
+            <ul>
+              <li>Describe the subatomic particles that make up an atom</li>
+              <li>
+                Use the periodic table to determine the numbers of protons and
+                electrons in a neutral (uncharged) atom.
+              </li>
+              <li>Describe the subatomic particles that make up an atom.</li>
+              <li>
+                Use the periodic table to determine the numbers of protons and
+                electrons in a neutral (uncharged) atom.
+              </li>
+            </ul>
+          </div>
+          >
+        </learning-scaffold>
       </div>
     `;
   }
 
-  // HAX specific callback
-  // This teaches HAX how to edit and work with your web component
   /**
    * haxProperties integration via file reference
    */
