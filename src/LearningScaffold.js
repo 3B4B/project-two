@@ -57,21 +57,10 @@ export class LearningScaffold extends SimpleColors {
   render() {
     return html`
       <div id="banner">
-        <learning-banner type=${this.type}></learning-banner>
+        <slot name="banner"></slot>
       </div>
       <div id="content">
-        <ul>
-          <li>Describe the subatomic particles that make up an atom</li>
-          <li>
-            Use the periodic table to determine the numbers of protons and
-            electrons in a neutral (uncharged) atom.
-          </li>
-          <li>Describe the subatomic particles that make up an atom.</li>
-          <li>
-            Use the periodic table to determine the numbers of protons and
-            electrons in a neutral (uncharged) atom.
-          </li>
-        </ul>
+        <slot name="content"></slot>
       </div>
     `;
   }

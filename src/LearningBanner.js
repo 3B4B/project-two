@@ -81,11 +81,11 @@ export class LearningBanner extends SimpleColors {
       <div id="banner">
         <div id="grid">
           <div class="gridItem">
-            <learning-icon type=${this.type}></learning-icon>
+            <slot name="icon"></slot>
           </div>
           <div class="gridItem">
-            <h2 id="main-header">Unit 1</h2>
-            <h3 id="sub-header">Learning Objectives</h3>
+            <slot name="heading"></slot>
+            <slot name="subHeading"></slot>
       </div>
           </div>
         </div>

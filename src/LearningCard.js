@@ -82,6 +82,18 @@ export class LearningCard extends LitElement {
         max-width: 700px;
         font-family: 'Open Sans', sans-serif;
       }
+      #main-header {
+          font-weight: 300;
+          font-size: 50px;
+          /* border: 1px solid blue; */
+          margin: 0;
+        }
+        #sub-header {
+          font-weight: 500;
+          font-size: 50px;
+          /* border: 1px solid yellow; */
+          margin: 0;
+        }
     `;
   }
 
@@ -89,7 +101,28 @@ export class LearningCard extends LitElement {
   render() {
     return html`
       <div id="entire-card">
-        <learning-scaffold type=${this.type}></learning-scaffold>
+        <learning-scaffold type=${this.type}>
+          <learning-banner type=${this.type} slot="banner">
+            <learning-icon type=${this.type} slot="icon"></learning-icon>
+            <h2 id="main-header" slot="heading">Unit 1</h2>
+            <h3 id="sub-header" slot="subHeading">Learning Objectives</h3>
+          </learning-banner>
+          <div slot="content">
+            <ul>
+              <li>Describe the subatomic particles that make up an atom</li>
+              <li>
+                Use the periodic table to determine the numbers of protons and
+                electrons in a neutral (uncharged) atom.
+              </li>
+              <li>Describe the subatomic particles that make up an atom.</li>
+              <li>
+                Use the periodic table to determine the numbers of protons and
+                electrons in a neutral (uncharged) atom.
+              </li>
+            </ul>
+          </div>
+          >
+        </learning-scaffold>
       </div>
     `;
   }
