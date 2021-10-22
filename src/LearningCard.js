@@ -66,12 +66,14 @@ export class LearningCard extends LitElement {
         display: block;
         --learning-card-banner-color: green;
         font-family: 'Open Sans', sans-serif;
+        margin-top: 100px;
       }
       #scaffold-card {
         :host {
           display: block;
           --learning-card-banner-color: green;
           font-family: 'Open Sans', sans-serif;
+          
         }
  
       /* this is how you match something on the tag itself like <learning-card type="math"> and then style the img inside */
@@ -81,6 +83,7 @@ export class LearningCard extends LitElement {
       #entire-card {
         max-width: 700px;
         font-family: 'Open Sans', sans-serif;
+
       }
       #main-header {
           font-weight: 300;
