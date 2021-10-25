@@ -32,10 +32,20 @@ export class LearningCard extends LitElement {
   // updated fires every time a property defined above changes
   // this allows you to react to variables changing and use javascript to perform logic
   updated(changedProperties) {
+    // TODO: Fix load for --learning-card-banner-color to carry it through all atoms
+
+    // changedProperties.forEach((oldValue, propName) => {
+    //   console.log("property changed");
+    //   if (propName === 'type' && this[propName] === 'CHEM CONNECTION') {
+    //     document.querySelector(':host').style.setProperty('--learning-card-banner-color', 'green');
+    //   } else if (propName === 'type' && this[propName] === 'DID YOU KNOW?') {
+    //     document.querySelector(':host').style.setProperty('--learning-card-banner-color', 'orange');
+    //   } else if (propName === 'type' && this[propName] === 'LEARNING OBJECTIVES') {
+    //     document.querySelector(':root').style.setProperty('--learning-card-banner-color', 'blue');
+    //   }
+    // });
     changedProperties.forEach((oldValue, propName) => {
-      if (propName === 'type' && this[propName] === 'Science') {
-        this.myIcon = 'beaker';
-      }
+      console.log(`updated: ${propName}`);
     });
   }
 
@@ -45,6 +55,7 @@ export class LearningCard extends LitElement {
     if (super.firstUpdated) {
       super.firstUpdated(changedProperties);
     }
+    window.onload = this.updated(changedProperties);
   }
 
   // HTMLElement life-cycle, element has been connected to the page / added or moved
@@ -64,18 +75,29 @@ export class LearningCard extends LitElement {
     return css`
       :host {
         display: block;
-        --learning-card-banner-color: green;
+        --learning-card-banner-color: blue;
         font-family: 'Open Sans', sans-serif;
         margin-top: 100px;
       }
+
+      :host([type='CHEM CONNECTION']) #banner {
+        background-color: green;
+      }
+      :host([type='LEARNING OBJECTIVES']) #banner {
+        background-color: orange;
+      }
+      :host([type='DID YOU KNOW?']) #banner {
+        background-color: blue;
+      }
+
       #scaffold-card {
         :host {
           display: block;
           --learning-card-banner-color: green;
           font-family: 'Open Sans', sans-serif;
-          
         }
- 
+      }
+
       /* this is how you match something on the tag itself like <learning-card type="math"> and then style the img inside */
       /* :host([type='math']) img {
         background-color: transparent;
@@ -83,7 +105,18 @@ export class LearningCard extends LitElement {
       #entire-card {
         max-width: 700px;
         font-family: 'Open Sans', sans-serif;
-
+      }
+      #main-header {
+        font-weight: 300;
+        font-size: 45px;
+        border: 1px solid yellow;
+        margin: 0;
+      }
+      #sub-header {
+        font-weight: 500;
+        font-size: 45px;
+        border: 1px solid yellow;
+        margin: 0;
       }
     `;
   }
@@ -95,8 +128,8 @@ export class LearningCard extends LitElement {
         <learning-scaffold type=${this.type}>
           <learning-banner type=${this.type} slot="banner">
             <learning-icon type=${this.type} slot="icon"></learning-icon>
-            <p id="main-header" slot="heading">Unit 1</p>
-            <p id="sub-header" slot="subHeading">Learning Objectives</p>
+            <h2 id="main-header" slot="heading">Unit 1</h2>
+            <h3 id="sub-header" slot="subHeading">${this.type}</h3>
           </learning-banner>
           <div slot="content">
             <ul>
@@ -112,7 +145,6 @@ export class LearningCard extends LitElement {
               </li>
             </ul>
           </div>
-          >
         </learning-scaffold>
       </div>
     `;
