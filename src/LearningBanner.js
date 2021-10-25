@@ -79,6 +79,7 @@ export class LearningBanner extends SimpleColors {
   }
 
   render() {
+    // Banner
     return html`
       <div id="banner">
         <div id="grid">

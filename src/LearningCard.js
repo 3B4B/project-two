@@ -88,8 +88,8 @@ export class LearningCard extends LitElement {
     `;
   }
 
-  // HTML - specific to Lit
   render() {
+    // Entire Card
     return html`
       <div id="entire-card">
         <learning-scaffold type=${this.type}>
