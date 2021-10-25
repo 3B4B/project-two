@@ -47,7 +47,7 @@ export class LearningBanner extends SimpleColors {
         }
 
         .gridItem {
-          border: 1px solid yellow;
+          border: 10px solid yellow;
         }
         :host([type='CHEM CONNECTION']) #banner {
           background-color: green;
@@ -64,18 +64,21 @@ export class LearningBanner extends SimpleColors {
           font-size: 50px;
           border: 2px solid red;
           margin: 0;
+          padding: 0;
         }
         #sub-header {
           font-weight: 500;
-          font-size: 50px;
+          font-size: 60px;
           /* border: 1px solid yellow; */
           margin: 0;
+          padding: 0;
         }
       `,
     ];
   }
 
   render() {
+    // Banner
     return html`
       <div id="banner">
         <div id="grid">
@@ -83,8 +86,8 @@ export class LearningBanner extends SimpleColors {
             <slot name="icon"></slot>
           </div>
           <div class="gridItem">
-            <slot name="heading"></slot>
-            <slot name="subHeading"></slot>
+            <slot id="main-header" name="heading"></slot>
+            <slot id="sub-header" name="subHeading"></slot>
       </div>
           </div>
         </div>

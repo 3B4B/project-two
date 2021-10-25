@@ -54,6 +54,7 @@ export class LearningScaffold extends SimpleColors {
   }
 
   render() {
+    // Scaffold card
     return html`
       <div id="banner">
         <slot name="banner"></slot>
