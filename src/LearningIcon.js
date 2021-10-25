@@ -9,8 +9,8 @@ const question = new URL('../assets/question.svg', import.meta.url).href;
 export class LearningIcon extends SimpleColors {
   constructor() {
     super();
-    this.image = null;
-    this.alt = '';
+    this.image = question;
+    this.alt = 'question icon';
     this.dark = false;
   }
 
@@ -33,13 +33,16 @@ export class LearningIcon extends SimpleColors {
       console.log(`Prop name:${propName}Value: ${this[propName]}`);
       if (propName === 'type' && this[propName] === 'CHEM CONNECTION') {
         this.image = new URL('../assets/beaker.svg', import.meta.url).href;
+        this.alt = this[propName];
       } else if (propName === 'type' && this[propName] === 'DID YOU KNOW?') {
         this.image = new URL('../assets/question.svg', import.meta.url).href;
+        this.alt = this[propName];
       } else if (
         propName === 'type' &&
         this[propName] === 'LEARNING OBJECTIVES'
       ) {
         this.image = new URL('../assets/lightbulb.svg', import.meta.url).href;
+        this.alt = this[propName];
       }
 
       console.log(`Image Location: ${this.image}`);
@@ -55,8 +58,9 @@ export class LearningIcon extends SimpleColors {
           flex-direction: row;
           height: var(--learning-card-height, 150px);
           width: var(--learning-card-width, 150px);
+          background-color: var(--learning-card-banner-color);
         }
-        :host([type='CHEM CONNECTION']) {
+        /* :host([type='CHEM CONNECTION']) {
           background-color: green;
         }
         :host([type='CHEM CONNECTION']) img {
@@ -74,7 +78,7 @@ export class LearningIcon extends SimpleColors {
         }
         :host([type='DID YOU KNOW?']) img {
           fill: blue;
-        }
+        } */
         span {
           display: inline-flex;
           height: var(--learning-card-height, 150px);
@@ -99,7 +103,6 @@ export class LearningIcon extends SimpleColors {
         <span><img src="${this.image}" alt="${this.alt}" /></span>
       </div>
     `;
-    // <span><img src = (${this.image} === "beaker") ? beaker: (${this.image} === "question") ? question : (${this.image} === "lightbulb") ? lightbulb : null} alt="Icon" /></span>
   }
 }
 customElements.define(LearningIcon.tag, LearningIcon);
