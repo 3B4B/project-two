@@ -27,16 +27,23 @@ export class LearningBanner extends SimpleColors {
     return [
       ...super.styles,
       css`
+        :host {
+          background-color: var(--learning-card-banner-color);
+        }
+        #banner {
+          background-color: var(--learning-card-banner-color);
+          display: flex;
+          flex-direction: row;
+          color: white;
+          font-family: 'Open Sans', sans-serif;
+          margin: 0px;
+          vertical-align: middle;
+        }
+
         #grid {
           display: grid;
           grid-template-columns: 1fr 4fr;
           grid-gap: 10px;
-        }
-        #iconContainer {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
         }
         .gridItem {
         }
@@ -49,18 +56,10 @@ export class LearningBanner extends SimpleColors {
         :host([type='DID YOU KNOW?']) #banner {
           background-color: blue;
         }
-        #banner {
-          background-color: var(--learning-card-banner-color);
-          display: flex;
-          flex-direction: row;
-          color: white;
-          font-family: 'Open Sans', sans-serif;
-          margin: 0px;
-          vertical-align: middle;
-        }
         #main-header {
-          font-weight: 300;
+          font-weight: 400;
           font-size: 50px;
+          border: 2px solid red;
           margin: 0;
           padding: 0;
           border: 1px solid yellow;
