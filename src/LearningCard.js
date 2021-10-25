@@ -73,9 +73,8 @@ export class LearningCard extends LitElement {
           display: block;
           --learning-card-banner-color: green;
           font-family: 'Open Sans', sans-serif;
-          
         }
- 
+      }
       /* this is how you match something on the tag itself like <learning-card type="math"> and then style the img inside */
       /* :host([type='math']) img {
         background-color: transparent;
@@ -83,7 +82,20 @@ export class LearningCard extends LitElement {
       #entire-card {
         max-width: 700px;
         font-family: 'Open Sans', sans-serif;
-
+      }
+      #main-header {
+        font-weight: 300;
+        font-size: 50px;
+        margin: 0;
+        padding: 0;
+        border: 10px solid yellow;
+      }
+      #sub-header {
+        font-weight: 500;
+        font-size: 60px;
+        border: 10px solid yellow;
+        margin: 0;
+        padding: 0;
       }
     `;
   }
@@ -95,8 +107,8 @@ export class LearningCard extends LitElement {
         <learning-scaffold type=${this.type}>
           <learning-banner type=${this.type} slot="banner">
             <learning-icon type=${this.type} slot="icon"></learning-icon>
-            <p id="main-header" slot="heading">Unit 1</p>
-            <p id="sub-header" slot="subHeading">Learning Objectives</p>
+            <h2 id="main-header" slot="heading">Unit 1</h2>
+            <h3 id="sub-header" slot="subHeading">Learning Objectives</h3>
           </learning-banner>
           <div slot="content">
             <ul>
