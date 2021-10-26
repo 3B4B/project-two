@@ -8,7 +8,7 @@ Meet for 1 hour to review completed requirements for 10/24 check in.
 This week 
 - Continue to make our way through the issue queue including implementing simple colors, adding in our button, finish setting up CSS variables 
 - Meet through the weekdays to ensure everything is completed by the due date
-
+- Added new issues that need to be done by the due date
 
 
 ## Tuesday, October 19 In-Class:
