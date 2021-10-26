@@ -1,15 +1,6 @@
 # Team notes
 This is for maintaining communication about your team's working meetings to "ship" the project.
 
-## Sunday, October 24 Check in: 
-
-Meet for 1 hour to review completed requirements for 10/24 check in. 
-
-This week 
-- Continue to make our way through the issue queue including implementing simple colors, adding in our button, finish setting up CSS variables 
-- Meet through the weekdays to ensure everything is completed by the due date
-- Added new issues that need to be done by the due date
-
 
 ## Tuesday, October 19 In-Class:
 
@@ -141,7 +132,14 @@ How come I can't apply styling to the slot tag in LearningBanner.js and all styl
 Also once we get the banner working fully this branch "feature/Banner will be merged back into master".
 
 ### Check-in 3
-- 
+####Sunday, October 24
+
+Meet for 1 hour to review completed requirements for 10/24 check in. 
+
+This week 
+- Continue to make our way through the issue queue including implementing simple colors, adding in our button, finish setting up CSS variables 
+- Meet through the weekdays to ensure everything is completed by the due date
+- Added new issues that need to be done by the due date
 - 
 ### Check-in 4
 - 
