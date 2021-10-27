@@ -2,15 +2,22 @@ import { html } from 'lit-html';
 import '../src/app.js';
 
 export default {
-  title: 'Project two',
+  title: 'Learning Card',
   component: 'learning-card',
   argTypes: {
-    type: { control: 'text' },
     slot: { control: 'text' },
+    type: {
+      options: ['CHEM CONNECTION', 'DID YOU KNOW?', 'LEARNING OBJECTIVES'],
+    },
   },
 };
 
-function LearningCardTemplate({ type = 'CHEM CONNECTION', slot }) {
+//
+//    Define Templates
+//
+
+// Learning Card
+function LearningCardTemplate({ type, slot }) {
   return html`
     <learning-card type="${type}">
       <div slot="content">${slot}</div>
@@ -18,8 +25,50 @@ function LearningCardTemplate({ type = 'CHEM CONNECTION', slot }) {
   `;
 }
 
+// Learning Icon
+function LearningIconTemplate({ type = 'CHEM CONNECTION' }) {
+  return html` <learning-icon type="${type}"></learning-icon> `;
+}
+
+function LearningBannerTemplate({
+  type = 'LEARNING OBJECTIVES',
+  heading = 'Unit 1',
+}) {
+  return html`
+    <learning-banner type=${type} slot="banner">
+      <learning-icon type=${type} slot="icon"></learning-icon>
+      <h2 slot="heading">${heading}</h2>
+      <h3 slot="subHeading">${type}</h3>
+    </learning-banner>
+  `;
+}
+
+function LearningScaffoldTemplate({ type = 'LEARNING OBJECTIVES' }) {
+  return html` <learning-scaffold type=${type}></learning-scaffold> `;
+}
+
+//
+// Defining Elements
+//
+
 export const LearningCard = LearningCardTemplate.bind({});
 LearningCard.args = {
   type: 'CHEM CONNECTION',
   slot: html`<p>slotted content that should render</p>`,
+};
+
+export const LearningIcon = LearningIconTemplate.bind({});
+LearningIcon.args = {
+  type: 'DID YOU KNOW',
+};
+
+export const LearningBanner = LearningBannerTemplate.bind({});
+LearningBanner.args = {
+  type: 'LEARNING OBJECTIVES',
+  heading: 'Unit 233',
+};
+
+export const LearningScaffold = LearningScaffoldTemplate.bind({});
+LearningScaffold.args = {
+  type: 'CHEM CONNECTION',
 };
