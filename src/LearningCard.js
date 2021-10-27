@@ -131,18 +131,7 @@ export class LearningCard extends LitElement {
             <h3 id="sub-header" slot="subHeading">${this.type}</h3>
           </learning-banner>
           <div slot="content">
-            <ul>
-              <li>Describe the subatomic particles that make up an atom</li>
-              <li>
-                Use the periodic table to determine the numbers of protons and
-                electrons in a neutral (uncharged) atom.
-              </li>
-              <li>Describe the subatomic particles that make up an atom.</li>
-              <li>
-                Use the periodic table to determine the numbers of protons and
-                electrons in a neutral (uncharged) atom.
-              </li>
-            </ul>
+            <slot name="content"></slot>
           </div>
         </learning-scaffold>
       </div>
