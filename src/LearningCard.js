@@ -15,39 +15,24 @@ export class LearningCard extends LitElement {
   constructor() {
     super();
     this.myIcon = null;
-    this.type = 'question';
+    this.type = 'LEARNING OBJECTIVES';
+
+    // setTimeout(() => {
+    //   import('./LearningBanner.js');
+    //   import('./LearningIcon.js');
+    // }, 0);
   }
 
   // properties that you wish to use as data in HTML, CSS, and the updated life-cycle
   static get properties() {
     return {
-      // reflect allows state changes to the element's property to be leveraged in CSS selectors
       type: { type: String, reflect: true },
-      // attribute helps us bind the JS spec for variables names to the HTML spec
-      // <learning-card my-icon="whatever" will set this.myIcon to "whatever"
-      userIcon: { type: String, attribute: 'user-icon' },
     };
   }
 
   // updated fires every time a property defined above changes
   // this allows you to react to variables changing and use javascript to perform logic
-  updated(changedProperties) {
-    // TODO: Fix load for --learning-card-banner-color to carry it through all atoms
-
-    // changedProperties.forEach((oldValue, propName) => {
-    //   console.log("property changed");
-    //   if (propName === 'type' && this[propName] === 'CHEM CONNECTION') {
-    //     document.querySelector(':host').style.setProperty('--learning-card-banner-color', 'green');
-    //   } else if (propName === 'type' && this[propName] === 'DID YOU KNOW?') {
-    //     document.querySelector(':host').style.setProperty('--learning-card-banner-color', 'orange');
-    //   } else if (propName === 'type' && this[propName] === 'LEARNING OBJECTIVES') {
-    //     document.querySelector(':root').style.setProperty('--learning-card-banner-color', 'blue');
-    //   }
-    // });
-    changedProperties.forEach((oldValue, propName) => {
-      console.log(`updated: ${propName}`);
-    });
-  }
+  updated(changedProperties) {}
 
   // Lit life-cycle; this fires the 1st time the element is rendered on the screen
   // this is a sign it is safe to make calls to this.shadowRoot
@@ -55,7 +40,6 @@ export class LearningCard extends LitElement {
     if (super.firstUpdated) {
       super.firstUpdated(changedProperties);
     }
-    window.onload = this.updated(changedProperties);
   }
 
   // HTMLElement life-cycle, element has been connected to the page / added or moved
@@ -75,47 +59,26 @@ export class LearningCard extends LitElement {
     return css`
       :host {
         display: block;
-        --learning-card-banner-color: blue;
         font-family: 'Open Sans', sans-serif;
-        margin-top: 100px;
+        margin: 50px;
       }
 
-      :host([type='CHEM CONNECTION']) #banner {
-        background-color: green;
-      }
-      :host([type='LEARNING OBJECTIVES']) #banner {
-        background-color: orange;
-      }
-      :host([type='DID YOU KNOW?']) #banner {
-        background-color: blue;
-      }
-
-      #scaffold-card {
-        :host {
-          display: block;
-          --learning-card-banner-color: green;
-          font-family: 'Open Sans', sans-serif;
-        }
-      }
-
-      /* this is how you match something on the tag itself like <learning-card type="math"> and then style the img inside */
-      /* :host([type='math']) img {
-        background-color: transparent;
-      } */
-      #entire-card {
-        max-width: 700px;
+      .entire-card {
+        width: 700px;
         font-family: 'Open Sans', sans-serif;
       }
-      #main-header {
+
+      .main-header {
         font-weight: 300;
-        font-size: 45px;
-        border: 1px solid yellow;
+        font-size: 50px;
+        /* border: 1px solid yellow; */
         margin: 0;
       }
-      #sub-header {
+
+      .sub-header {
         font-weight: 500;
-        font-size: 45px;
-        border: 1px solid yellow;
+        font-size: 50px;
+        /* border: 1px solid yellow; */
         margin: 0;
       }
     `;
@@ -124,13 +87,14 @@ export class LearningCard extends LitElement {
   // HTML - specific to Lit
   render() {
     return html`
-      <div id="entire-card">
+      <div class="entire-card">
         <learning-scaffold type=${this.type}>
           <learning-banner type=${this.type} slot="banner">
             <learning-icon type=${this.type} slot="icon"></learning-icon>
-            <h2 id="main-header" slot="heading">Unit 1</h2>
-            <h3 id="sub-header" slot="subHeading">${this.type}</h3>
+            <h2 class="main-header" slot="heading">UNIT 1</h2>
+            <h3 class="sub-header" slot="subHeading">${this.type}</h3>
           </learning-banner>
+
           <div slot="content">
             <ul>
               <li>Describe the subatomic particles that make up an atom</li>
