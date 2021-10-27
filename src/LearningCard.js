@@ -62,7 +62,6 @@ export class LearningCard extends LitElement {
         font-family: 'Open Sans', sans-serif;
         margin: 50px;
       }
-
       .entire-card {
         width: 700px;
         font-family: 'Open Sans', sans-serif;
@@ -96,18 +95,7 @@ export class LearningCard extends LitElement {
           </learning-banner>
 
           <div slot="content">
-            <ul>
-              <li>Describe the subatomic particles that make up an atom</li>
-              <li>
-                Use the periodic table to determine the numbers of protons and
-                electrons in a neutral (uncharged) atom.
-              </li>
-              <li>Describe the subatomic particles that make up an atom.</li>
-              <li>
-                Use the periodic table to determine the numbers of protons and
-                electrons in a neutral (uncharged) atom.
-              </li>
-            </ul>
+            <slot name="content"></slot>
           </div>
         </learning-scaffold>
       </div>
