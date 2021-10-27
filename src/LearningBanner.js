@@ -56,27 +56,11 @@ export class LearningBanner extends SimpleColors {
           margin: 0px;
           border: 1px, solid, var(--simple-colors-default-theme-accent-7);
         }
-
         .grid {
           display: grid;
           grid-template-columns: 1fr 4fr;
           align-items: center;
           grid-gap: 10px;
-        }
-        #main-header {
-          font-weight: 400;
-          font-size: 50px;
-          border: 2px solid red;
-          margin: 0;
-          padding: 0;
-          border: 1px solid yellow;
-        }
-        #sub-header {
-          font-weight: 500;
-          font-size: 60px;
-          border: 1px solid yellow;
-          margin: 0;
-          padding: 0;
         }
       `,
     ];
@@ -91,8 +75,8 @@ export class LearningBanner extends SimpleColors {
             <slot name="icon"></slot>
           </div>
           <div class="gridItem">
-            <slot id="main-header" name="heading"></slot>
-            <slot id="sub-header" name="subHeading"></slot>
+            <slot name="heading"></slot>
+            <slot name="subHeading"></slot>
           </div>
           </div>
         </div>
