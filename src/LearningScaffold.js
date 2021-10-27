@@ -2,9 +2,6 @@
 import { html, css } from 'lit';
 import { SimpleColors } from '@lrnwebcomponents/simple-colors/simple-colors';
 
-import './LearningBanner.js';
-import './LearningIcon.js';
-
 export class LearningScaffold extends SimpleColors {
   constructor() {
     super();

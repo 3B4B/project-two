@@ -2,8 +2,6 @@
 import { html, css } from 'lit';
 import { SimpleColors } from '@lrnwebcomponents/simple-colors/simple-colors';
 
-import './LearningIcon.js';
-
 export class LearningBanner extends SimpleColors {
   constructor() {
     super();
