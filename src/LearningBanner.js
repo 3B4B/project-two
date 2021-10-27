@@ -72,6 +72,7 @@ export class LearningBanner extends SimpleColors {
   }
 
   render() {
+    // Banner
     return html`
       <div class="banner">
         <div class="grid">
@@ -79,8 +80,8 @@ export class LearningBanner extends SimpleColors {
             <slot name="icon"></slot>
           </div>
           <div class="gridItem">
-            <slot name="heading"></slot>
-            <slot name="subHeading"></slot>
+            <slot id="main-header" name="heading"></slot>
+            <slot id="sub-header" name="subHeading"></slot>
       </div>
           </div>
         </div>
