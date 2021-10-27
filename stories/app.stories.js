@@ -6,21 +6,20 @@ export default {
   component: 'learning-card',
   argTypes: {
     type: { control: 'text' },
+    slot: { control: 'text' },
   },
 };
 
-
-function Template({ type = "math", slot }) {
+function LearningCardTemplate({ type = 'CHEM CONNECTION', slot }) {
   return html`
     <learning-card type="${type}">
-    ${slot}
+      <div slot="content">${slot}</div>
     </learning-card>
   `;
 }
-export const Card = Template.bind({});
 
-export const ScienceCard = Template.bind({});
-ScienceCard.args = {
-  type: 'science',
-  slot: html`<p>slotted content that should render</p>`
+export const LearningCard = LearningCardTemplate.bind({});
+LearningCard.args = {
+  type: 'CHEM CONNECTION',
+  slot: html`<p>slotted content that should render</p>`,
 };
