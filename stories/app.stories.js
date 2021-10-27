@@ -43,6 +43,7 @@ function LearningBannerTemplate({
   `;
 }
 
+// This is going to display nothing???? So why have it?
 function LearningScaffoldTemplate({ type = 'LEARNING OBJECTIVES' }) {
   return html` <learning-scaffold type=${type}></learning-scaffold> `;
 }
