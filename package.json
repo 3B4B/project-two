@@ -21,7 +21,6 @@
     "start": "web-dev-server"
   },
   "dependencies": {
-    
     "@lrnwebcomponents/simple-colors": "^4.0.1",
     "lit": "^2.0.0"
   },

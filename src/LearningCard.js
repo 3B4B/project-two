@@ -9,9 +9,13 @@ export class LearningCard extends LitElement {
 
   constructor() {
     super();
-    this.myIcon = null;
     this.type = 'know';
     this.subheader = 'DID YOU KNOW?';
+
+    setTimeout(() => {
+      import('./LearningBanner.js');
+      import('./LearningIcon.js');
+    }, 0);
   }
 
   static get properties() {
