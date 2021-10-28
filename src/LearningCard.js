@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import { LitElement, html, css } from 'lit';
-import './LearningScaffold.js';
 
 export class LearningCard extends LitElement {
   static get tag() {
@@ -9,6 +8,7 @@ export class LearningCard extends LitElement {
 
   constructor() {
     super();
+
     this.type = 'know';
     this.subheader = 'DID YOU KNOW?';
 
