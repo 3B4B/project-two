@@ -25,12 +25,7 @@ export class LearningScaffold extends SimpleColors {
       css`
         :host {
           display: block;
-          font-family: 'Open Sans', sans-serif;
         }
-        /* this is how you match something on the tag itself like <learning-card type="math"> and then style the img inside */
-        /* :host([type='math']) img {
-        background-color: transparent;
-      } */
 
         #content {
           background-color: white;

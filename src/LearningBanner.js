@@ -6,7 +6,6 @@ export class LearningBanner extends SimpleColors {
   constructor() {
     super();
     this.accentColor = 'blue';
-    this.dark = false;
   }
 
   static get tag() {
@@ -21,53 +20,42 @@ export class LearningBanner extends SimpleColors {
     };
   }
 
+  updated(changedProperties) {
+    changedProperties.forEach((oldValue, propName) => {
+      if (propName === 'type' && this[propName] === 'chem') {
+        this.accentColor = 'green';
+      } else if (propName === 'type' && this[propName] === 'know') {
+        this.accentColor = 'blue';
+      } else if (propName === 'type' && this[propName] === 'objectives') {
+        this.accentColor = 'orange';
+      }
+    });
+  }
+
   static get styles() {
     return [
       ...super.styles,
       css`
         :host {
-          background-color: var(--learning-card-banner-color);
+          background-color: var(--simple-colors-default-theme-accent-7);
         }
-        #banner {
-          background-color: var(--learning-card-banner-color);
+        :host([dark]) #banner {
+          background-color: var(--simple-colors-default-theme-accent-3);
+        }
+        .banner {
+          background-color: var(--simple-colors-default-theme-accent-7);
           display: flex;
           flex-direction: row;
           color: white;
           font-family: 'Open Sans', sans-serif;
           margin: 0px;
-          vertical-align: middle;
+          border: 1px, solid, var(--simple-colors-default-theme-accent-7);
         }
-
-        #grid {
+        .grid {
           display: grid;
           grid-template-columns: 1fr 4fr;
+          align-items: center;
           grid-gap: 10px;
-        }
-        .gridItem {
-        }
-        :host([type='CHEM CONNECTION']) #banner {
-          background-color: green;
-        }
-        :host([type='LEARNING OBJECTIVES']) #banner {
-          background-color: orange;
-        }
-        :host([type='DID YOU KNOW?']) #banner {
-          background-color: blue;
-        }
-        #main-header {
-          font-weight: 400;
-          font-size: 50px;
-          border: 2px solid red;
-          margin: 0;
-          padding: 0;
-          border: 1px solid yellow;
-        }
-        #sub-header {
-          font-weight: 500;
-          font-size: 60px;
-          border: 1px solid yellow;
-          margin: 0;
-          padding: 0;
         }
       `,
     ];
@@ -76,14 +64,14 @@ export class LearningBanner extends SimpleColors {
   render() {
     // Banner
     return html`
-      <div id="banner">
-        <div id="grid">
-          <div id="iconContainer">
+      <div class="banner">
+        <div class="grid">
+          <div class="gridItem">
             <slot name="icon"></slot>
           </div>
           <div class="gridItem">
-            <slot id="main-header" name="heading"></slot>
-            <slot id="sub-header" name="subHeading"></slot>
+            <slot name="heading"></slot>
+            <slot name="subHeading"></slot>
           </div>
           </div>
         </div>

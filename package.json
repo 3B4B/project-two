@@ -22,10 +22,10 @@
   },
   "dependencies": {
     "@lrnwebcomponents/simple-colors": "^4.0.1",
-    "lit": "^2.0.0",
-    "lit-html": "^2.0.1"
+    "lit": "^2.0.0"
   },
   "devDependencies": {
+    "@3b4b/circle-button-fj": "^0.0.1",
     "@babel/preset-env": "^7.15.6",
     "@custom-elements-manifest/analyzer": "^0.4.17",
     "@lrnwebcomponents/deduping-fix": "^4.0.0",
