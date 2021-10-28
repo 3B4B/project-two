@@ -2,7 +2,6 @@
 // dependencies / things imported
 import { LitElement, html, css } from 'lit';
 import './LearningScaffold.js';
-import '@3b4b/circle-button-fj/circle-button-fj';
 
 // EXPORT (so make available to other documents that reference this file) a class, that extends LitElement
 // which has the magic life-cycles and developer experience below added
@@ -15,13 +14,12 @@ export class LearningCard extends LitElement {
   // HTMLElement life-cycle, built in; use this for setting defaults
   constructor() {
     super();
-    this.myIcon = null;
     this.type = 'LEARNING OBJECTIVES';
 
-    // setTimeout(() => {
-    //   import('./LearningBanner.js');
-    //   import('./LearningIcon.js');
-    // }, 0);
+    setTimeout(() => {
+      import('./LearningBanner.js');
+      import('./LearningIcon.js');
+    }, 0);
   }
 
   // properties that you wish to use as data in HTML, CSS, and the updated life-cycle
