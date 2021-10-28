@@ -38,6 +38,9 @@
       width: 200px;
       height: 200px;
     }
+    circle-button-fj {
+      margin: 80%; 
+    }
   </style>
   <title>Project two: learning card</title>
 </head>
@@ -48,9 +51,28 @@
     <li><a href="/hax.html">HAX, card demo</a></li>
   </ul>
   <div class="wrapper">
-
-
-    <learning-card type="CHEM CONNECTION">
+    <learning-card type="chem">
+      <div slot='content'>
+        <ul>
+          <li>Describe the subatomic particles that make up an atom</li>
+          <li>
+            Use the periodic table to determine the numbers of protons and
+            electrons in a neutral (uncharged) atom.
+          </li>
+          <li>Describe the subatomic particles that make up an atom.</li>
+          <li>
+            Use the periodic table to determine the numbers of protons and
+            electrons in a neutral (uncharged) atom.
+          </li>
+        </ul>
+          <circle-button-fj
+              title="Help"
+              description="Click here"
+              link="https://quizlet.com/latest"
+          ></circle-button-fj>
+      </div>
+    </learning-card>
+    <learning-card type="know">
       <div slot='content'>
         <ul>
           <li>Describe the subatomic particles that make up an atom</li>
@@ -66,23 +88,7 @@
         </ul>
       </div>
     </learning-card>
-    <learning-card type="DID YOU KNOW?">
-      <div slot='content'>
-        <ul>
-          <li>Describe the subatomic particles that make up an atom</li>
-          <li>
-            Use the periodic table to determine the numbers of protons and
-            electrons in a neutral (uncharged) atom.
-          </li>
-          <li>Describe the subatomic particles that make up an atom.</li>
-          <li>
-            Use the periodic table to determine the numbers of protons and
-            electrons in a neutral (uncharged) atom.
-          </li>
-        </ul>
-      </div>
-    </learning-card>
-    <learning-card type="LEARNING OBJECTIVES">
+    <learning-card type="objectives">
       <div slot='content'>
         <ul>
           <li>Describe the subatomic particles that make up an atom</li>
@@ -118,6 +124,8 @@
   </div>
   <script type="module">
     import "./src/app.js";
+    // eslint-disable-next-line import/no-extraneous-dependencies
+    import '@3b4b/circle-button-fj/circle-button-fj';
   </script>
 </body>
 
