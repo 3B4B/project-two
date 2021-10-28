@@ -24,14 +24,11 @@ export class LearningBanner extends SimpleColors {
 
   updated(changedProperties) {
     changedProperties.forEach((oldValue, propName) => {
-      if (propName === 'type' && this[propName] === 'CHEM CONNECTION') {
+      if (propName === 'type' && this[propName] === 'chem') {
         this.accentColor = 'green';
-      } else if (propName === 'type' && this[propName] === 'DID YOU KNOW?') {
+      } else if (propName === 'type' && this[propName] === 'know') {
         this.accentColor = 'blue';
-      } else if (
-        propName === 'type' &&
-        this[propName] === 'LEARNING OBJECTIVES'
-      ) {
+      } else if (propName === 'type' && this[propName] === 'objectives') {
         this.accentColor = 'orange';
       }
     });
