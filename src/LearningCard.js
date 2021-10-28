@@ -2,6 +2,7 @@
 // dependencies / things imported
 import { LitElement, html, css } from 'lit';
 import './LearningScaffold.js';
+import '@3b4b/circle-button-fj/circle-button-fj';
 
 // EXPORT (so make available to other documents that reference this file) a class, that extends LitElement
 // which has the magic life-cycles and developer experience below added
@@ -27,6 +28,7 @@ export class LearningCard extends LitElement {
   static get properties() {
     return {
       type: { type: String, reflect: true },
+      link: { type: String, reflect: true },
     };
   }
 
@@ -80,6 +82,9 @@ export class LearningCard extends LitElement {
         /* border: 1px solid yellow; */
         margin: 0;
       }
+      circle-button-fj {
+        margin-left: 80%;
+      }
     `;
   }
 
@@ -96,6 +101,11 @@ export class LearningCard extends LitElement {
 
           <div slot="content">
             <slot name="content"></slot>
+            <circle-button-fj
+              title="Help"
+              description="Click here"
+              link="https://quizlet.com/latest"
+            ></circle-button-fj>
           </div>
         </learning-scaffold>
       </div>
