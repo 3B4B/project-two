@@ -6,8 +6,13 @@ export default {
   component: 'learning-card',
   argTypes: {
     slot: { control: 'text' },
-    type: {
-      options: ['CHEM CONNECTION', 'DID YOU KNOW?', 'LEARNING OBJECTIVES'],
+    type2: {
+      control: 'select',
+      options: {
+        chem: 'chem',
+        objectives: 'objectives',
+        know: 'know',
+      },
     },
   },
 };
@@ -65,6 +70,7 @@ LearningIcon.args = {
 
 export const LearningBanner = LearningBannerTemplate.bind({});
 LearningBanner.args = {
+  // Default
   type: 'LEARNING OBJECTIVES',
   heading: 'Unit 233',
 };

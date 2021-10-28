@@ -39,7 +39,7 @@ describe('Learning-Scaffold', () => {
   });
 
   it('renders a paragraph', () => {
-    const parag = element.shadowRoot.querySelector('div');
+    const parag = element.shadowRoot.querySelector('p');
     expect(parag).to.exist;
   });
 
@@ -62,8 +62,13 @@ describe('Learning-Banner', () => {
 
   // Fails, how come this does not find the icon, it's passed in as a slot?
   it('renders a learning-icon', () => {
-    const icon = element.shadowRoot.querySelector('learning-icon');
-    expect(icon).to.exist;
+    const icon = element.shadowRoot.querySelector('slot[name="icon"]'); // slot
+    expect(icon.assignedElements({ flat: true })[0].innerText).to.exist;
+  });
+
+  it('renders a main heading', () => {
+    const icon = element.shadowRoot.querySelector('slot[name="heading"]');
+    expect(icon.assignedElements({ flat: true })[0].innerText).to.exist;
   });
 
   it('passes the a11y audit', async () => {
