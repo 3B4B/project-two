@@ -2,9 +2,6 @@
 import { html, css } from 'lit';
 import { SimpleColors } from '@lrnwebcomponents/simple-colors/simple-colors';
 
-import './LearningBanner.js';
-import './LearningIcon.js';
-
 export class LearningScaffold extends SimpleColors {
   constructor() {
     super();
@@ -26,11 +23,7 @@ export class LearningScaffold extends SimpleColors {
     return [
       ...super.styles,
       css`
-        :host {
-          display: block;
-        }
-
-        #content {
+        /* #content {
           background-color: white;
           border: 1px solid black;
           border-top: transparent;
@@ -43,7 +36,7 @@ export class LearningScaffold extends SimpleColors {
         ul {
           margin: 0px;
           padding: 0px;
-        }
+        } */
       `,
     ];
   }

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
 import { html, css } from 'lit';
 import { SimpleColors } from '@lrnwebcomponents/simple-colors/simple-colors';
@@ -29,18 +30,15 @@ export class LearningIcon extends SimpleColors {
   updated(changedProperties) {
     changedProperties.forEach((oldValue, propName) => {
       console.log(`Prop name:${propName}Value: ${this[propName]}`);
-      if (propName === 'type' && this[propName] === 'CHEM CONNECTION') {
+      if (propName === 'type' && this[propName] === 'chem') {
         this.image = new URL('../assets/beaker.svg', import.meta.url).href;
         this.alt = this[propName];
         this.accentColor = 'green';
-      } else if (propName === 'type' && this[propName] === 'DID YOU KNOW?') {
+      } else if (propName === 'type' && this[propName] === 'know') {
         this.image = new URL('../assets/question.svg', import.meta.url).href;
         this.alt = this[propName];
         this.accentColor = 'blue';
-      } else if (
-        propName === 'type' &&
-        this[propName] === 'LEARNING OBJECTIVES'
-      ) {
+      } else if (propName === 'type' && this[propName] === 'objectives') {
         this.image = new URL('../assets/lightbulb.svg', import.meta.url).href;
         this.alt = this[propName];
         this.accentColor = 'orange';

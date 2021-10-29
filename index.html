@@ -34,9 +34,12 @@
       --learning-card-width: 150px;
       background-color: blue;
     }
-    learning-card[type="science"]::part(icon) {
+    /* learning-card[type="science"]::part(icon) {
       width: 200px;
       height: 200px;
+    } */
+    circle-button-fj {
+      margin: 80%; 
     }
   </style>
   <title>Project two: learning card</title>
@@ -48,9 +51,7 @@
     <li><a href="/hax.html">HAX, card demo</a></li>
   </ul>
   <div class="wrapper">
-
-
-    <learning-card type="CHEM CONNECTION">
+    <learning-card type="chem">
       <div slot='content'>
         <ul>
           <li>Describe the subatomic particles that make up an atom</li>
@@ -64,25 +65,16 @@
             electrons in a neutral (uncharged) atom.
           </li>
         </ul>
+        <circle-button-fj title="Help" description="Click here"link="https://quizlet.com/latest"></circle-button-fj>
       </div>
     </learning-card>
-    <learning-card type="DID YOU KNOW?">
+    <learning-card type="know">
       <div slot='content'>
-        <ul>
-          <li>Describe the subatomic particles that make up an atom</li>
-          <li>
-            Use the periodic table to determine the numbers of protons and
-            electrons in a neutral (uncharged) atom.
-          </li>
-          <li>Describe the subatomic particles that make up an atom.</li>
-          <li>
-            Use the periodic table to determine the numbers of protons and
-            electrons in a neutral (uncharged) atom.
-          </li>
-        </ul>
+        <p>Testing paragraph</p>
+        <circle-button-fj title="Help" description="Click here"link="https://quizlet.com/latest"></circle-button-fj>
       </div>
     </learning-card>
-    <learning-card type="LEARNING OBJECTIVES">
+    <learning-card type="objectives">
       <div slot='content'>
         <ul>
           <li>Describe the subatomic particles that make up an atom</li>
@@ -114,11 +106,28 @@
         </ul>
       </div>
     </learning-card>
+
+  
+    <learning-scaffold type="CHEM CONNECTION">
+
+    </learning-scaffold>
+
+    <learning-banner type="DID YOU KNOW?">
+      <learning-icon type="DID YOU KNOW?" slot="icon"></learning-icon>
+            <h2 id="main-header" slot="heading">Unit 1</h2>
+            <h3 id="sub-header" slot="subHeading">LEARNING OBJECTIVES</h3>
+    </learning-banner>
  
+
   </div>
   <script type="module">
     import "./src/app.js";
+    // eslint-disable-next-line import/no-extraneous-dependencies
+    import '@3b4b/circle-button-fj/circle-button-fj';
   </script>
+  <script type="text/javascript" src="src/LearningIcon.js"></script>
+  <script type="text/javascript" src="src/LearningBanner.js"></script>
+  <script type="text/javascript" src="src/LearningScaffold.js"></script>
 </body>
 
 </html>
