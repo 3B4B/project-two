@@ -60,6 +60,7 @@ export class LearningCard extends LitElement {
       .entire-card {
         font-family: 'Open Sans', sans-serif;
         width: 900px;
+        transition: all 0.35s ease-in-out;
       }
 
       .main-header {
@@ -84,6 +85,76 @@ export class LearningCard extends LitElement {
         padding-bottom: 10px;
         padding-left: 150px;
         margin: 0px;
+      }
+
+      /* max-width: "If device width is less than or equal to 600px, then do {…}” 
+        min-width: “If [device width] is greater than or equal to 600px, then do {…}”
+        Combo: min-width is bottom value, max-width is top for */
+      @media screen and (min-width: 300px) and (max-width: 650px) {
+        .entire-card {
+          transition: all 0.35s ease-in-out;
+          width: 400px;
+        }
+
+        .main-header {
+          font-weight: 300;
+          font-size: 40px;
+          /* border: 1px solid yellow; */
+          margin: 0;
+        }
+
+        .sub-header {
+          font-weight: 500;
+          font-size: 40px;
+          /* border: 1px solid yellow; */
+          margin: 0;
+        }
+
+        .content {
+          padding-top: 5px;
+          padding-left: 10px;
+          padding-bottom: 20px;
+          padding-right: 30px;
+          margin: 0px;
+        }
+
+        /* TODO: Target circle-button-fj's css to fix margin */
+        .content circle-button-fj {
+          margin: 0px;
+        }
+      }
+
+      @media screen and (min-width: 650px) and (max-width: 1000px) {
+        .entire-card {
+          transition: all 0.35s ease-in-out;
+          width: 600px;
+        }
+
+        .main-header {
+          font-weight: 300;
+          font-size: 45px;
+          /* border: 1px solid yellow; */
+          margin: 0;
+        }
+
+        .sub-header {
+          font-weight: 500;
+          font-size: 45px;
+          /* border: 1px solid yellow; */
+          margin: 0;
+        }
+
+        .content {
+          padding-top: 5px;
+          padding-bottom: 10px;
+          padding-left: 50px;
+          margin: 0px;
+        }
+
+        /* TODO: Target circle-button-fj's css to fix margin */
+        .content circle-button-fj {
+          margin: 0px;
+        }
       }
     `;
   }

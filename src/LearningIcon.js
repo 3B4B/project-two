@@ -55,7 +55,6 @@ export class LearningIcon extends SimpleColors {
           flex-direction: row;
           height: var(--learning-card-height, 150px);
           width: var(--learning-card-width, 150px);
-          background-color: var(--learning-card-banner-color);
         }
         span {
           display: inline-flex;
@@ -69,8 +68,47 @@ export class LearningIcon extends SimpleColors {
           display: inline-flex;
           height: var(--learning-card-height, 150px);
           width: var(--learning-card-width, 150px);
-          background-color: var(--learning-banner-color);
         }
+
+        @media screen and (min-width: 300px) and (max-width: 650px){
+          :host {
+            display: inline-flex;
+            flex-direction: row;
+            height: 90px;
+            width: 90px;
+          }
+          span {
+            height: 90px;
+            width: 90px;
+            justify-content: center;
+            align-items: center;
+            padding: 0px 5px;
+          }
+          img {
+            height: 90px;
+            width: 90px;
+          }
+
+          @media screen and (min-width: 650px) and (max-width: 1000px){
+            :host {
+            display: inline-flex;
+            flex-direction: row;
+            height: 120px;
+            width: 120px;
+          }
+          span {
+            height: 120px;
+            width: 120px;
+            justify-content: center;
+            align-items: center;
+            padding: 0px 10px;
+          }
+          img {
+            height: 120px;
+            width: 120px;
+          }
+          }
+
       `,
     ];
   }
