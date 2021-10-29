@@ -87,6 +87,10 @@ export class LearningCard extends LitElement {
         margin: 0px;
       }
 
+      .content ::slotted(circle-button-fj) {
+        margin-left: 260px;
+      }
+
       /* max-width: "If device width is less than or equal to 600px, then do {…}” 
         min-width: “If [device width] is greater than or equal to 600px, then do {…}”
         Combo: min-width is bottom value, max-width is top for */
@@ -119,8 +123,8 @@ export class LearningCard extends LitElement {
         }
 
         /* TODO: Target circle-button-fj's css to fix margin */
-        .content circle-button-fj {
-          margin: 0px;
+        .content ::slotted(circle-button-fj) {
+          margin-left: 148px;
         }
       }
 
@@ -152,8 +156,8 @@ export class LearningCard extends LitElement {
         }
 
         /* TODO: Target circle-button-fj's css to fix margin */
-        .content circle-button-fj {
-          margin: 0px;
+        .content ::slotted(circle-button-fj) {
+          margin-left: 196px;
         }
       }
     `;
