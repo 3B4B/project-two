@@ -1,12 +1,14 @@
 import { html } from 'lit-html';
-import '../src/app.js';
+
+import '../src/LearningBanner.js';
+import '../src/LearningIcon.js';
 
 export default {
-  title: 'Learning Card',
-  component: 'learning-card',
+  title: 'Learning Banner',
+  component: 'learning-banner',
   argTypes: {
-    slot: { control: 'text' },
-    type2: {
+    heading: { control: 'text' },
+    type: {
       control: 'select',
       options: {
         chem: 'chem',
@@ -17,28 +19,7 @@ export default {
   },
 };
 
-//
-//    Define Templates
-//
-
-// Learning Card
-function LearningCardTemplate({ type, slot }) {
-  return html`
-    <learning-card type="${type}">
-      <div slot="content">${slot}</div>
-    </learning-card>
-  `;
-}
-
-// Learning Icon
-function LearningIconTemplate({ type = 'CHEM CONNECTION' }) {
-  return html` <learning-icon type="${type}"></learning-icon> `;
-}
-
-function LearningBannerTemplate({
-  type = 'LEARNING OBJECTIVES',
-  heading = 'Unit 1',
-}) {
+function LearningBannerTemplate({ type, heading }) {
   return html`
     <learning-banner type=${type} slot="banner">
       <learning-icon type=${type} slot="icon"></learning-icon>
@@ -48,34 +29,20 @@ function LearningBannerTemplate({
   `;
 }
 
-// This is going to display nothing???? So why have it?
-function LearningScaffoldTemplate({ type = 'LEARNING OBJECTIVES' }) {
-  return html` <learning-scaffold type=${type}></learning-scaffold> `;
-}
-
-//
-// Defining Elements
-//
-
-export const LearningCard = LearningCardTemplate.bind({});
-LearningCard.args = {
-  type: 'CHEM CONNECTION',
-  slot: html`<p>slotted content that should render</p>`,
+export const KnowledgeBanner = LearningBannerTemplate.bind({});
+KnowledgeBanner.args = {
+  type: 'know',
+  heading: 'Unit 1',
 };
 
-export const LearningIcon = LearningIconTemplate.bind({});
-LearningIcon.args = {
-  type: 'DID YOU KNOW',
+export const ChemBanner = LearningBannerTemplate.bind({});
+ChemBanner.args = {
+  type: 'chem',
+  heading: 'Unit 2',
 };
 
-export const LearningBanner = LearningBannerTemplate.bind({});
-LearningBanner.args = {
-  // Default
-  type: 'LEARNING OBJECTIVES',
-  heading: 'Unit 233',
-};
-
-export const LearningScaffold = LearningScaffoldTemplate.bind({});
-LearningScaffold.args = {
-  type: 'CHEM CONNECTION',
+export const ObjectiveBanner = LearningBannerTemplate.bind({});
+ObjectiveBanner.args = {
+  type: 'objectives',
+  heading: 'Unit 3',
 };
