@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import { LitElement, html, css } from 'lit';
-import './LearningScaffold.js';
 
 export class LearningCard extends LitElement {
   static get tag() {
