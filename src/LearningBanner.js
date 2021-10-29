@@ -50,6 +50,7 @@ export class LearningBanner extends SimpleColors {
           font-family: 'Open Sans', sans-serif;
           margin: 0px;
           border: 1px, solid, var(--simple-colors-default-theme-accent-7);
+          text-transform: uppercase;
         }
         .grid {
           display: grid;

@@ -8,7 +8,6 @@ export class LearningCard extends LitElement {
 
   constructor() {
     super();
-
     this.type = 'know';
     this.subheader = 'DID YOU KNOW?';
 
@@ -55,13 +54,12 @@ export class LearningCard extends LitElement {
   static get styles() {
     return css`
       :host {
-        display: block;
         font-family: 'Open Sans', sans-serif;
         margin: 50px;
       }
       .entire-card {
-        width: 700px;
         font-family: 'Open Sans', sans-serif;
+        width: 900px;
       }
 
       .main-header {
@@ -77,6 +75,16 @@ export class LearningCard extends LitElement {
         /* border: 1px solid yellow; */
         margin: 0;
       }
+
+      .content {
+        background-color: white;
+        border: 1px solid black;
+        border-top: transparent;
+        padding-top: 5px;
+        padding-bottom: 10px;
+        padding-left: 150px;
+        margin: 0px;
+      }
     `;
   }
 
@@ -85,12 +93,14 @@ export class LearningCard extends LitElement {
     return html`
       <div class="entire-card">
         <learning-scaffold type=${this.type}>
-          <learning-banner type=${this.type} slot="banner">
-            <learning-icon type=${this.type} slot="icon"></learning-icon>
-            <h2 class="main-header" slot="heading">UNIT 1</h2>
-            <h3 class="sub-header" slot="subHeading">${this.subheader}</h3>
-          </learning-banner>
-          <div slot="content">
+          <div slot="banner">
+            <learning-banner type=${this.type} slot="banner">
+              <learning-icon type=${this.type} slot="icon"></learning-icon>
+              <h2 class="main-header" slot="heading">Unit 1</h2>
+              <h3 class="sub-header" slot="subHeading">${this.subheader}</h3>
+            </learning-banner>
+          </div>
+          <div slot="content" class="content">
             <slot name="content"></slot>
           </div>
         </learning-scaffold>
