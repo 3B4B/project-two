@@ -38,6 +38,7 @@ export class LearningBanner extends SimpleColors {
       css`
         :host {
           background-color: var(--simple-colors-default-theme-accent-7);
+          font-family: 'Open Sans', sans-serif;
         }
         :host([dark]) #banner {
           background-color: var(--simple-colors-default-theme-accent-3);
