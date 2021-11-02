@@ -9,7 +9,7 @@ export class LearningCard extends LitElement {
   constructor() {
     super();
     this.type = 'know';
-    this.header = 'Unit 69';
+    this.header = 'Unit #';
     this.subheader = 'DID YOU KNOW?';
 
     setTimeout(() => {
@@ -68,14 +68,12 @@ export class LearningCard extends LitElement {
       .main-header {
         font-weight: 300;
         font-size: 50px;
-        /* border: 1px solid yellow; */
         margin: 0;
       }
 
       .sub-header {
         font-weight: 500;
         font-size: 50px;
-        /* border: 1px solid yellow; */
         margin: 0;
       }
 
@@ -93,9 +91,6 @@ export class LearningCard extends LitElement {
         margin-left: 260px;
       }
 
-      /* max-width: "If device width is less than or equal to 600px, then do {…}” 
-        min-width: “If [device width] is greater than or equal to 600px, then do {…}”
-        Combo: min-width is bottom value, max-width is top for */
       @media screen and (min-width: 300px) and (max-width: 650px) {
         .entire-card {
           transition: all 0.35s ease-in-out;
@@ -105,14 +100,12 @@ export class LearningCard extends LitElement {
         .main-header {
           font-weight: 300;
           font-size: 40px;
-          /* border: 1px solid yellow; */
           margin: 0;
         }
 
         .sub-header {
           font-weight: 500;
           font-size: 40px;
-          /* border: 1px solid yellow; */
           margin: 0;
         }
 
@@ -138,14 +131,12 @@ export class LearningCard extends LitElement {
         .main-header {
           font-weight: 300;
           font-size: 45px;
-          /* border: 1px solid yellow; */
           margin: 0;
         }
 
         .sub-header {
           font-weight: 500;
           font-size: 45px;
-          /* border: 1px solid yellow; */
           margin: 0;
         }
 

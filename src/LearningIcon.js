@@ -31,15 +31,15 @@ export class LearningIcon extends SimpleColors {
     changedProperties.forEach((oldValue, propName) => {
       console.log(`Prop name:${propName}Value: ${this[propName]}`);
       if (propName === 'type' && this[propName] === 'chem') {
-        this.image = new URL('../assets/beaker.svg', import.meta.url).href;
+        this.image = beaker;
         this.alt = this[propName];
         this.accentColor = 'green';
       } else if (propName === 'type' && this[propName] === 'know') {
-        this.image = new URL('../assets/question.svg', import.meta.url).href;
+        this.image = question;
         this.alt = this[propName];
         this.accentColor = 'blue';
       } else if (propName === 'type' && this[propName] === 'objectives') {
-        this.image = new URL('../assets/lightbulb.svg', import.meta.url).href;
+        this.image = lightbulb;
         this.alt = this[propName];
         this.accentColor = 'orange';
       }
