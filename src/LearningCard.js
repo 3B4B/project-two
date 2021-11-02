@@ -9,6 +9,7 @@ export class LearningCard extends LitElement {
   constructor() {
     super();
     this.type = 'know';
+    this.header = 'Something Cool Dummy';
     this.subheader = 'DID YOU KNOW?';
 
     setTimeout(() => {
@@ -21,6 +22,7 @@ export class LearningCard extends LitElement {
     return {
       type: { type: String, reflect: true },
       link: { type: String, reflect: true },
+      header: { type: String, reflect: true },
       subheader: { type: String, reflect: true },
     };
   }
@@ -169,7 +171,7 @@ export class LearningCard extends LitElement {
           <div slot="banner">
             <learning-banner type=${this.type} slot="banner">
               <learning-icon type=${this.type} slot="icon"></learning-icon>
-              <h2 class="main-header" slot="heading">Unit 1</h2>
+              <h2 class="main-header" slot="heading">${this.header}</h2>
               <h3 class="sub-header" slot="subHeading">${this.subheader}</h3>
             </learning-banner>
           </div>

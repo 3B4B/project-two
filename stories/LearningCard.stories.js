@@ -6,6 +6,7 @@ export default {
   component: 'learning-card',
   argTypes: {
     slot: { control: 'text' },
+    heading: { control: 'text' },
     type: {
       control: 'select',
       options: {
@@ -22,9 +23,9 @@ export default {
 //
 
 // Learning Card
-function LearningCardTemplate({ type, slot }) {
+function LearningCardTemplate({ type, slot, heading }) {
   return html`
-    <learning-card type="${type}">
+    <learning-card type="${type}" header="${heading}">
       <div slot="content">${slot}</div>
     </learning-card>
   `;
@@ -40,13 +41,16 @@ export const KnowCard = LearningCardTemplate.bind({});
 export const ObjectiveCard = LearningCardTemplate.bind({});
 ChemCard.args = {
   type: 'chem',
+  heading: 'Unit 1',
   slot: html`<p>I am chem connection card</p>`,
 };
 KnowCard.args = {
   type: 'know',
+  heading: 'Unit 2',
   slot: html`<p>I am knowledge card</p>`,
 };
 ObjectiveCard.args = {
   type: 'objective',
+  heading: 'Unit 3',
   slot: html`<p>I am objective card</p>`,
 };

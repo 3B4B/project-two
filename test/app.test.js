@@ -100,7 +100,7 @@ describe('Learning-Banner', () => {
   it('renders a main heading', () => {
     const heading = element.shadowRoot.querySelector(`slot[name="heading"]`);
     expect(heading.assignedElements({ flat: true })[0].innerText).to.equal(
-      'Unit 1'
+      'UNIT 1'
     );
   });
   it('renders a sub heading', () => {

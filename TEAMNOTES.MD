@@ -132,7 +132,7 @@ How come I can't apply styling to the slot tag in LearningBanner.js and all styl
 Also once we get the banner working fully this branch "feature/Banner will be merged back into master".
 
 ### Check-in 3
-####Sunday, October 24
+#### Sunday, October 24
 
 Meet for 1 hour to review completed requirements for 10/24 check in. 
 
@@ -140,7 +140,17 @@ This week
 - Continue to make our way through the issue queue including implementing simple colors, adding in our button, finish setting up CSS variables 
 - Meet through the weekdays to ensure everything is completed by the due date
 - Added new issues that need to be done by the due date
-- 
+
 ### Check-in 4
-- 
-- 
+#### Sunday, October 31  
+Meet to review completed requirements for check-in and tuesdays due date.
+  
+This week
+- we completed dynamic resizing of the card based on page size
+- fixed our type to be more usable
+- completed storybook demo
+  - working on making sure icon renders correctly in storybook by itself (background color issue)
+- completed testing 
+- correctly placed button so it is not required 
+
+For the due date on tuesday we need to publish our card to npm and be sure to remove unused code.
