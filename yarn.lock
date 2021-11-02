@@ -1339,6 +1339,16 @@
     "@lrnwebcomponents/schema-behaviors" "^4.0.1"
     "lit" "2.0.0"
 
+"@lrnwebcomponents/product-offering@^4.0.1":
+  "integrity" "sha512-eg/ydAg4qP6OEAcjt4ZY0uA/eOKKSCkENRiipkHjo1i++9xTse5yWPAZVtc9fNVpdr2Z8hOsZjlzI3aDxvoHVw=="
+  "resolved" "https://registry.npmjs.org/@lrnwebcomponents/product-offering/-/product-offering-4.0.1.tgz"
+  "version" "4.0.1"
+  dependencies:
+    "@lrnwebcomponents/intersection-element" "^4.0.0"
+    "@lrnwebcomponents/simple-colors" "^4.0.1"
+    "@lrnwebcomponents/simple-icon" "^4.0.1"
+    "lit" "2.0.0"
+
 "@lrnwebcomponents/responsive-grid@^4.0.1":
   "integrity" "sha512-WJhpA2OULMmoW/DXirvowhsGcAY/N3jqi0GEBx7M4MrH3pXdB40LCkIQqMDCNfD2+sD9YYUhLv3YipFLQ9vGTw=="
   "resolved" "https://registry.npmjs.org/@lrnwebcomponents/responsive-grid/-/responsive-grid-4.0.1.tgz"
@@ -1799,7 +1809,7 @@
     "@open-wc/scoped-elements" "^2.0.0-next.6"
     "lit" "^2.0.0"
 
-"@open-wc/testing@next":
+"@open-wc/testing@^3.0.0-next.5":
   "integrity" "sha512-n2NrCGql3daWKOuyvdwKqdnm2ArOch+U7yIuvLZGTwtlMXlvZjOAln3CKZCWEmN5lXcgIAb5czeY7CzOmP8QWg=="
   "resolved" "https://registry.npmjs.org/@open-wc/testing/-/testing-3.0.0-next.5.tgz"
   "version" "3.0.0-next.5"
@@ -4298,11 +4308,6 @@
   "integrity" "sha1-FQStJSMVjKpA20onh8sBQRmU6k8="
   "resolved" "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
   "version" "1.0.0"
-
-"fsevents@~2.3.2":
-  "integrity" "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA=="
-  "resolved" "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz"
-  "version" "2.3.2"
 
 "function-bind@^1.1.1":
   "integrity" "sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A=="
