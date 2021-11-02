@@ -10,7 +10,7 @@ describe('LearningCard', () => {
   let element;
   beforeEach(async () => {
     element = await fixture(
-      html` <learning-card type="DID YOU KNOW?"
+      html` <learning-card type="DID YOU KNOW?" header="Unit 21"
         ><p slot="content">I am content</p></learning-card
       >`
     );

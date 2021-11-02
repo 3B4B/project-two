@@ -12,7 +12,7 @@ export class LearningCard extends IntersectionObserverMixin(SimpleColors) {
   constructor() {
     super();
     this.type = 'know';
-    this.header = 'Something Cool Dummy';
+    this.header = 'Unit #';
     this.subheader = 'DID YOU KNOW?';
 
     setTimeout(() => {
@@ -61,119 +61,104 @@ export class LearningCard extends IntersectionObserverMixin(SimpleColors) {
   }
 
   static get styles() {
-    return [
-      ...super.styles,
+    return css`
+      :host {
+        font-family: 'Open Sans', sans-serif;
+        margin: 50px;
+      }
+      .entire-card {
+        font-family: 'Open Sans', sans-serif;
+        width: 900px;
+        transition: all 0.35s ease-in-out;
+      }
 
-      css`
-        :host {
-          font-family: 'Open Sans', sans-serif;
-          margin: 50px;
-        }
+      .main-header {
+        font-weight: 300;
+        font-size: 50px;
+        margin: 0;
+      }
+
+      .sub-header {
+        font-weight: 500;
+        font-size: 50px;
+        margin: 0;
+      }
+
+      .content {
+        background-color: white;
+        border: 1px solid black;
+        border-top: transparent;
+        padding-top: 5px;
+        padding-bottom: 10px;
+        padding-left: 150px;
+        margin: 0px;
+      }
+
+      .content ::slotted(circle-button-fj) {
+        margin-left: 260px;
+      }
+
+      @media screen and (min-width: 300px) and (max-width: 650px) {
         .entire-card {
-          font-family: 'Open Sans', sans-serif;
-          width: 900px;
           transition: all 0.35s ease-in-out;
+          width: 400px;
         }
 
         .main-header {
           font-weight: 300;
-          font-size: 50px;
-          /* border: 1px solid yellow; */
+          font-size: 40px;
           margin: 0;
         }
 
         .sub-header {
           font-weight: 500;
-          font-size: 50px;
-          /* border: 1px solid yellow; */
+          font-size: 40px;
           margin: 0;
         }
 
         .content {
-          background-color: white;
-          border: 1px solid black;
-          border-top: transparent;
           padding-top: 5px;
-          padding-bottom: 10px;
-          padding-left: 150px;
+          padding-left: 10px;
+          padding-bottom: 20px;
+          padding-right: 30px;
           margin: 0px;
         }
 
         .content ::slotted(circle-button-fj) {
-          margin-left: 260px;
+          margin-left: 148px;
+        }
+      }
+
+      @media screen and (min-width: 650px) and (max-width: 1000px) {
+        .entire-card {
+          transition: all 0.35s ease-in-out;
+          width: 600px;
         }
 
-        /* max-width: "If device width is less than or equal to 600px, then do {…}” 
-        min-width: “If [device width] is greater than or equal to 600px, then do {…}”
-        Combo: min-width is bottom value, max-width is top for */
-        @media screen and (min-width: 300px) and (max-width: 650px) {
-          .entire-card {
-            transition: all 0.35s ease-in-out;
-            width: 400px;
-          }
-
-          .main-header {
-            font-weight: 300;
-            font-size: 40px;
-            /* border: 1px solid yellow; */
-            margin: 0;
-          }
-
-          .sub-header {
-            font-weight: 500;
-            font-size: 40px;
-            /* border: 1px solid yellow; */
-            margin: 0;
-          }
-
-          .content {
-            padding-top: 5px;
-            padding-left: 10px;
-            padding-bottom: 20px;
-            padding-right: 30px;
-            margin: 0px;
-          }
-
-          /* TODO: Target circle-button-fj's css to fix margin */
-          .content ::slotted(circle-button-fj) {
-            margin-left: 148px;
-          }
+        .main-header {
+          font-weight: 300;
+          font-size: 45px;
+          margin: 0;
         }
 
-        @media screen and (min-width: 650px) and (max-width: 1000px) {
-          .entire-card {
-            transition: all 0.35s ease-in-out;
-            width: 600px;
-          }
-
-          .main-header {
-            font-weight: 300;
-            font-size: 45px;
-            /* border: 1px solid yellow; */
-            margin: 0;
-          }
-
-          .sub-header {
-            font-weight: 500;
-            font-size: 45px;
-            /* border: 1px solid yellow; */
-            margin: 0;
-          }
-
-          .content {
-            padding-top: 5px;
-            padding-bottom: 10px;
-            padding-left: 50px;
-            margin: 0px;
-          }
-
-          /* TODO: Target circle-button-fj's css to fix margin */
-          .content ::slotted(circle-button-fj) {
-            margin-left: 196px;
-          }
+        .sub-header {
+          font-weight: 500;
+          font-size: 45px;
+          margin: 0;
         }
-      `,
-    ];
+
+        .content {
+          padding-top: 5px;
+          padding-bottom: 10px;
+          padding-left: 50px;
+          margin: 0px;
+        }
+
+        .content ::slotted(circle-button-fj) {
+          margin-left: 196px;
+        }
+      }
+    `;
   }
 
   render() {

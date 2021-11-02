@@ -19,7 +19,9 @@ export default {
 
 // Learning Icon
 function LearningIconTemplate({ type }) {
-  return html` <learning-icon type=${type}></learning-icon>`;
+  return html` <div style="background-color: black;">
+    <learning-icon type=${type}></learning-icon>
+  </div>`;
 }
 
 export const ChemIcon = LearningIconTemplate.bind({});

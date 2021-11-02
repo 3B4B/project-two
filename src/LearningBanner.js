@@ -38,6 +38,7 @@ export class LearningBanner extends SimpleColors {
       css`
         :host {
           background-color: var(--simple-colors-default-theme-accent-7);
+          font-family: 'Open Sans', sans-serif;
         }
         :host([dark]) #banner {
           background-color: var(--simple-colors-default-theme-accent-3);
@@ -57,6 +58,20 @@ export class LearningBanner extends SimpleColors {
           grid-template-columns: 1fr 4fr;
           align-items: center;
           grid-gap: 10px;
+        }
+
+        @media screen and (min-width: 300px) and (max-width: 650px) {
+          .banner {
+            transition: all 0.35s ease-in-out;
+            width: 400px;
+          }
+        }
+
+        @media screen and (min-width: 650px) and (max-width: 1000px) {
+          .banner {
+            transition: all 0.35s ease-in-out;
+            width: 600px;
+          }
         }
       `,
     ];
