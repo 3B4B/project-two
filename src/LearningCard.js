@@ -9,7 +9,7 @@ export class LearningCard extends LitElement {
   constructor() {
     super();
     this.type = 'know';
-    this.header = 'Something Cool Dummy';
+    this.header = 'Unit 69';
     this.subheader = 'DID YOU KNOW?';
 
     setTimeout(() => {
