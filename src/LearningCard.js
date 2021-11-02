@@ -1,7 +1,10 @@
 /* eslint-disable no-unused-vars */
 import { LitElement, html, css } from 'lit';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { IntersectionObserverMixin } from '@lrnwebcomponents/intersection-element/lib/IntersectionObserverMixin.js';
+import { SimpleColors } from '@lrnwebcomponents/simple-colors/simple-colors.js';
 
-export class LearningCard extends LitElement {
+export class LearningCard extends IntersectionObserverMixin(SimpleColors) {
   static get tag() {
     return 'learning-card';
   }
@@ -19,6 +22,10 @@ export class LearningCard extends LitElement {
   }
 
   static get properties() {
+    let props = {};
+    if (super.properties) {
+      props = super.properties;
+    }
     return {
       type: { type: String, reflect: true },
       link: { type: String, reflect: true },
@@ -157,20 +164,24 @@ export class LearningCard extends LitElement {
   render() {
     // Entire Card
     return html`
-      <div class="entire-card">
-        <learning-scaffold type=${this.type}>
-          <div slot="banner">
-            <learning-banner type=${this.type} slot="banner">
-              <learning-icon type=${this.type} slot="icon"></learning-icon>
-              <h2 class="main-header" slot="heading">${this.header}</h2>
-              <h3 class="sub-header" slot="subHeading">${this.subheader}</h3>
-            </learning-banner>
-          </div>
-          <div slot="content" class="content">
-            <slot name="content"></slot>
-          </div>
-        </learning-scaffold>
-      </div>
+      ${this.elementVisible
+        ? html` <div class="entire-card">
+            <learning-scaffold type=${this.type}>
+              <div slot="banner">
+                <learning-banner type=${this.type} slot="banner">
+                  <learning-icon type=${this.type} slot="icon"></learning-icon>
+                  <h2 class="main-header" slot="heading">${this.header}</h2>
+                  <h3 class="sub-header" slot="subHeading">
+                    ${this.subheader}
+                  </h3>
+                </learning-banner>
+              </div>
+              <div slot="content" class="content">
+                <slot name="content"></slot>
+              </div>
+            </learning-scaffold>
+          </div>`
+        : ``}
     `;
   }
 

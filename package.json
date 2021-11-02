@@ -21,6 +21,7 @@
     "start": "web-dev-server"
   },
   "dependencies": {
+    "@lrnwebcomponents/product-offering": "^4.0.1",
     "@lrnwebcomponents/simple-colors": "^4.0.1",
     "lit": "^2.0.0",
     "lit-html": "^2.0.1"
