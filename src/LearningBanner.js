@@ -59,6 +59,20 @@ export class LearningBanner extends SimpleColors {
           align-items: center;
           grid-gap: 10px;
         }
+
+        @media screen and (min-width: 300px) and (max-width: 650px) {
+          .banner {
+            transition: all 0.35s ease-in-out;
+            width: 400px;
+          }
+        }
+
+        @media screen and (min-width: 650px) and (max-width: 1000px) {
+          .banner {
+            transition: all 0.35s ease-in-out;
+            width: 600px;
+          }
+        }
       `,
     ];
   }
