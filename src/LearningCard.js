@@ -122,7 +122,6 @@ export class LearningCard extends LitElement {
           margin: 0px;
         }
 
-        /* TODO: Target circle-button-fj's css to fix margin */
         .content ::slotted(circle-button-fj) {
           margin-left: 148px;
         }
@@ -155,7 +154,6 @@ export class LearningCard extends LitElement {
           margin: 0px;
         }
 
-        /* TODO: Target circle-button-fj's css to fix margin */
         .content ::slotted(circle-button-fj) {
           margin-left: 196px;
         }
