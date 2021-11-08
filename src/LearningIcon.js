@@ -11,7 +11,7 @@ export class LearningIcon extends SimpleColors {
   constructor() {
     super();
     this.image = question;
-    this.alt = 'question icon';
+    this.alt = '';
   }
 
   static get tag() {
@@ -32,15 +32,12 @@ export class LearningIcon extends SimpleColors {
       console.log(`Prop name:${propName}Value: ${this[propName]}`);
       if (propName === 'type' && this[propName] === 'chem') {
         this.image = beaker;
-        this.alt = this[propName];
         this.accentColor = 'green';
       } else if (propName === 'type' && this[propName] === 'know') {
         this.image = question;
-        this.alt = this[propName];
         this.accentColor = 'blue';
       } else if (propName === 'type' && this[propName] === 'objectives') {
         this.image = lightbulb;
-        this.alt = this[propName];
         this.accentColor = 'orange';
       }
     });
@@ -80,17 +77,11 @@ export class LearningIcon extends SimpleColors {
           span {
             height: 90px;
             width: 90px;
-            justify-content: center;
-            align-items: center;
-            padding: 0px 5px;
           }
-          img {
-            height: 90px;
-            width: 90px;
-          }
+        }
 
-          @media screen and (min-width: 650px) and (max-width: 1000px){
-            :host {
+        @media screen and (min-width: 650px) and (max-width: 1000px){
+          :host {
             display: inline-flex;
             flex-direction: row;
             height: 120px;
@@ -107,14 +98,13 @@ export class LearningIcon extends SimpleColors {
             height: 120px;
             width: 120px;
           }
-          }
+        }
 
       `,
     ];
   }
 
   render() {
-    console.log(this.image);
     return html`
       <div>
         <span><img src="${this.image}" alt="${this.alt}" /></span>
